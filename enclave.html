@@ -8,100 +8,65 @@
     <style>
         :root { --bg: #000; --panel: #0a0a0a; --text: #fff; --accent: #949494; --border: #1a1a1a; --green: #00ff00; }
         body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 0; min-height: 100vh; display: block; }
-        
-        /* --- Validated Personnel Status Bar --- */
         .status-bar { background: #111; border-bottom: 1px solid var(--border); padding: 10px 40px; display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; z-index: 2000; }
         .status-text { font-family: monospace; font-size: 0.65rem; color: var(--green); letter-spacing: 0.1rem; text-transform: uppercase; }
         .status-text span { color: #fff; margin-left: 10px; }
-
         .corner-logo { position: fixed; top: 60px; left: 40px; width: 140px; filter: brightness(0) invert(1); z-index: 1000; }
-        
         .content-wrapper { padding: 140px 40px 180px 40px; }
-        
         .header-title { max-width: 1200px; margin: 0 auto 50px; text-align: right; }
         .header-title h2 { font-size: 1.1rem; letter-spacing: 0.3rem; text-transform: uppercase; font-weight: 300; border-bottom: 1px solid var(--border); display: inline-block; padding-bottom: 10px; }
-        .header-title p { color: var(--accent); font-size: 0.7rem; letter-spacing: 0.1rem; margin-top: 10px; text-transform: uppercase; }
-        
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        
-        .card { background: var(--panel); border: 1px solid var(--border); padding: 35px; transition: 0.3s; }
-        .card:hover { border-color: #444; background: #0d0d0d; }
+        .card { background: var(--panel); border: 1px solid var(--border); padding: 35px; }
         .card h3 { font-size: 0.85rem; letter-spacing: 0.15rem; text-transform: uppercase; margin-bottom: 15px; color: var(--green); display: flex; justify-content: space-between; align-items: center; }
         .card .patent-tag { color: #444; font-size: 0.6rem; font-family: monospace; border: 1px solid #222; padding: 2px 6px; }
         .card p { font-size: 0.85rem; line-height: 1.7; color: var(--accent); }
-        .card strong { color: #fff; }
-
         .cta-box { max-width: 1200px; margin: 60px auto; text-align: center; border-top: 1px solid var(--border); padding-top: 40px; }
-        .btn-cta { background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2rem; cursor: pointer; font-size: 0.75rem; font-weight: 700; }
-
+        .btn-cta { background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2rem; cursor: pointer; font-size: 0.75rem; font-weight: 700; margin: 10px; }
         .cui-page-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #000; border-top: 1px solid #1a1a1a; padding: 20px 0; text-align: center; z-index: 1000; }
         .cui-label { font-size: 0.75rem; font-weight: 900; letter-spacing: 0.2rem; text-transform: uppercase; margin-bottom: 5px; }
-        .cui-subtext { font-size: 0.6rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05rem; }
     </style>
 </head>
 <body>
-
     <div class="status-bar">
-        <div class="status-text">
-            SYSTEM STATUS: OPERATIONAL // AUTHENTICATED PERSONNEL: <span>ID_3100_SECURE</span>
-        </div>
+        <div class="status-text">SYSTEM STATUS: OPERATIONAL // AUTHENTICATED PERSONNEL: <span>ID_3100_SECURE</span></div>
     </div>
-
     <img src="image.png" alt="Veridix" class="corner-logo">
-
     <div class="content-wrapper">
         <div class="header-title">
             <h2>Sovereign Standard™ Enclave</h2>
-            <p>22-Patent Portfolio // Operational Feats & Compliance Matrix</p>
+            <p style="color: var(--accent); font-size: 0.7rem; text-transform: uppercase; margin-top: 10px;">22-Patent Portfolio // Operational Feats</p>
         </div>
-
         <div class="grid">
             <div class="card">
                 <h3>CSI <span class="patent-tag">Cyber-Sovereign Interface</span></h3>
-                <p>The hardware-gated bridge between commercial mission software and sovereign safety logic. <strong>CSI</strong> prevents mission-layer corruption from affecting kinetic governance.</p>
+                <p>Hardware-gated bridge between mission software and sovereign safety logic. Prevents payload corruption from affecting kinetic governance.</p>
             </div>
-
             <div class="card">
                 <h3>HMSR <span class="patent-tag">Human-Machine State Record</span></h3>
-                <p>The core of <strong>DoDD 3000.09</strong> compliance. Provides an immutable, hardware-verified audit trail of every kinetic intent and decision-chain.</p>
+                <p>Immutable, hardware-verified audit trail of kinetic intent. Direct alignment with <strong>DoDD 3000.09</strong> compliance mandates.</p>
             </div>
-
-            <div class="card) ">
+            <div class="card">
                 <h3>LLS <span class="patent-tag">Logically Separate System</span></h3>
-                <p>A physically isolated silicon layer (The "Moat") that executes safety-critical protocols independently of the asset's primary flight/navigation computer.</p>
+                <p>Physically isolated silicon layer (The "Moat") executing safety protocols independently of primary flight computers.</p>
             </div>
-
             <div class="card">
                 <h3>HELB <span class="patent-tag">Hardened Edge Logic Barrier</span></h3>
-                <p>Hardware-level enforcement of the "Sovereign Perimeter." <strong>HELB</strong> prevents unauthorized lateral movement or logic injection during asset compromise.</p>
-            </div>
-
-            <div class="card">
-                <h3>QEC-3100 <span class="patent-tag">Quantum Entropy Core</span></h3>
-                <p>Utilizes hardware-anchored quantum entropy to seed stochastic maneuvers, ensuring mission profiles are mathematically unsolvable by adversarial AI.</p>
-            </div>
-
-            <div class="card">
-                <h3>FAD-3500 <span class="patent-tag">Forensic Atomization Device</span></h3>
-                <p>Active <strong>248ms catalytic substrate dissolution</strong>. Guarantees 100% volumetric destruction of the 22-patent IP block upon chassis breach detection.</p>
+                <p>Hardware-level enforcement of the Sovereign Perimeter. Prevents lateral movement or logic injection during asset compromise.</p>
             </div>
         </div>
-
         <div class="cta-box">
-            <button class="btn-cta" onclick="sendInquiry()">Request Technical Compliance Data</button>
-            <button class="btn-cta" onclick="window.location.href='index.html'">Secure Logout</button>
+            <button class="btn-cta" onclick="window.location.href='compliance.html'">View Compliance Matrix</button>
+            <button class="btn-cta" onclick="sendInquiry()">Request Technical Data</button>
         </div>
     </div>
-
     <div class="cui-page-footer">
-        <div class="cui-label">CONTROLLED UNCLASSIFIED INFORMATION // JURISDICTIONAL TRUTH ANCHOR ACTIVE</div>
-        <div class="cui-subtext">Proprietary and Confidential: Veridix Strategic Defense Initiative | 22-Patent Portfolio | Sovereign Standard™</div>
+        <div class="cui-label">CUI // JURISDICTIONAL TRUTH ANCHOR ACTIVE</div>
+        <div style="font-size: 0.6rem; color: var(--accent); text-transform: uppercase;">Proprietary & Confidential: Veridix Strategic Defense Initiative</div>
     </div>
-
     <script>
         function sendInquiry() {
-            const subject = "Verification Request: HMSR/LLS/CSI Technical Matrix [N0016426SNB26]";
-            const body = "To Veridix Operations,\n\nI am requesting specific technical data regarding the CSI, HMSR, and LLS implementations within the Sovereign Standard OAL.\n\nRequired for mission-gap analysis regarding DoDD 3000.09 compliance.\n\nValidated .mil/.gov identity attached.";
+            const subject = "Technical Request: Veridix Sovereign Standard Feats";
+            const body = "I am requesting Volume 2 data for [Organization]. Validated identity attached.";
             window.location.href = "mailto:m.ramsey@veridix.systems?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
         }
     </script>
