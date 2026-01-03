@@ -3,101 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Enclave | Veridix Sovereign Standard™</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Veridix | Sovereign Standard™ Gateway</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --bg: #000; --panel: #0a0a0a; --text: #fff; --accent: #949494; --border: #1a1a1a; --green: #00ff00; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 0; min-height: 100vh; display: block; }
-        
-        /* --- Validated Personnel Status Bar --- */
-        .status-bar { background: #111; border-bottom: 1px solid var(--border); padding: 10px 40px; display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; z-index: 2000; }
-        .status-text { font-family: monospace; font-size: 0.65rem; color: var(--green); letter-spacing: 0.1rem; text-transform: uppercase; }
-        .status-text span { color: #fff; margin-left: 10px; }
-
-        .corner-logo { position: fixed; top: 60px; left: 40px; width: 140px; filter: brightness(0) invert(1); z-index: 1000; }
-        
-        .content-wrapper { padding: 140px 40px 180px 40px; }
-        
-        .header-title { max-width: 1200px; margin: 0 auto 50px; text-align: right; }
-        .header-title h2 { font-size: 1.1rem; letter-spacing: 0.3rem; text-transform: uppercase; font-weight: 300; border-bottom: 1px solid var(--border); display: inline-block; padding-bottom: 10px; }
-        .header-title p { color: var(--accent); font-size: 0.7rem; letter-spacing: 0.1rem; margin-top: 10px; text-transform: uppercase; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        
-        .card { background: var(--panel); border: 1px solid var(--border); padding: 35px; transition: 0.3s; }
-        .card:hover { border-color: #444; background: #0d0d0d; }
-        .card h3 { font-size: 0.8rem; letter-spacing: 0.15rem; text-transform: uppercase; margin-bottom: 15px; color: var(--green); display: flex; justify-content: space-between; }
-        .card .patent-count { color: #444; font-size: 0.65rem; }
-        .card p { font-size: 0.85rem; line-height: 1.7; color: var(--accent); }
-
-        .cta-box { max-width: 1200px; margin: 60px auto; text-align: center; border-top: 1px solid var(--border); padding-top: 40px; }
-        .btn-cta { background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2rem; cursor: pointer; font-size: 0.75rem; font-weight: 700; }
-
-        .cui-page-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #000; border-top: 1px solid #1a1a1a; padding: 20px 0; text-align: center; z-index: 1000; }
-        .cui-label { font-size: 0.75rem; font-weight: 900; letter-spacing: 0.2rem; text-transform: uppercase; margin-bottom: 5px; }
-        .cui-subtext { font-size: 0.6rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05rem; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; overflow: hidden; position: relative; }
+        .corner-logo { position: absolute; top: 40px; left: 40px; width: 160px; filter: brightness(0) invert(1); z-index: 100; }
+        .container { text-align: center; max-width: 600px; padding: 20px; }
+        h1 { font-size: 1.8rem; letter-spacing: 0.8rem; text-transform: uppercase; font-weight: 300; margin-bottom: 10px; }
+        .tagline { font-size: 0.8rem; color: var(--accent); letter-spacing: 0.3rem; margin-bottom: 50px; text-transform: uppercase; font-weight: 900; }
+        .box { border: 1px solid var(--border); background: var(--panel); padding: 45px; text-align: left; }
+        .status { font-size: 0.7rem; display: flex; align-items: center; margin-bottom: 25px; letter-spacing: 0.2rem; }
+        .dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; margin-right: 12px; box-shadow: 0 0 10px var(--green); }
+        .input { width: 100%; background: #111; border: 1px solid var(--border); color: #fff; padding: 18px; margin-bottom: 20px; box-sizing: border-box; font-family: monospace; outline: none; }
+        .btn { width: 100%; padding: 18px; border: none; font-weight: 900; letter-spacing: 0.25rem; text-transform: uppercase; cursor: pointer; transition: 0.3s; margin-bottom: 15px; }
+        .btn-main { background: #fff; color: #000; }
+        .btn-cac { background: transparent; color: var(--green); border: 1px solid var(--green); }
+        .footer { margin-top: 60px; font-size: 0.65rem; color: #444; text-align: center; line-height: 1.8; }
     </style>
 </head>
 <body>
-
-    <div class="status-bar">
-        <div class="status-text">
-            SYSTEM STATUS: OPERATIONAL // AUTHENTICATED PERSONNEL: <span>ID_3100_SECURE</span>
-        </div>
-    </div>
-
     <img src="image.png" alt="Veridix" class="corner-logo">
-
-    <div class="content-wrapper">
-        <div class="header-title">
-            <h2>Sovereign Standard™ Enclave</h2>
-            <p>Integrated Defense Architecture // 22 Registered Patents</p>
+    <div class="container">
+        <h1>Veridix</h1>
+        <div class="tagline">The Hardware-Anchored Sovereign Standard™</div>
+        <div class="box">
+            <div class="status"><span class="dot"></span> SECURE INQUIRY GATEWAY</div>
+            <button class="btn btn-cac" onclick="alert('Initializing CAC/PKI Handshake...')">Verify with CAC (PKI)</button>
+            <div style="text-align:center; color:#222; margin-bottom:15px; font-size:0.6rem;">— OR —</div>
+            <input type="password" id="idInput" class="input" placeholder="SOVEREIGN IDENTIFIER">
+            <button class="btn btn-main" onclick="checkAccess()">Validate Access</button>
         </div>
-
-        <div class="grid">
-            <div class="card">
-                <h3>Compute & Logic <span class="patent-count">[8 Patents]</span></h3>
-                <p>Foundational 3100-Series Quantum Stochastic Logic. Hardware-anchored entropy generation for un-hackable decision cycles in denied environments.</p>
-            </div>
-
-            <div class="card">
-                <h3>Mimetic Stealth <span class="patent-count">[4 Patents]</span></h3>
-                <p>Proprietary 3200-Series Signal Masking. Encoding mission telemetry into ambient biological and environmental noise via Lorentz Attractor phase-shifting.</p>
-            </div>
-
-            <div class="card">
-                <h3>Parasitic Persistence <span class="patent-count">[3 Patents]</span></h3>
-                <p>3400-Series OEH (Orbital/Environmental Harvesting). Patents covering scavenged-energy logic maintenance for ultra-long-duration mission persistence.</p>
-            </div>
-
-            <div class="card">
-                <h3>Edge Intelligence <span class="patent-count">[2 Patents]</span></h3>
-                <p>Interior Data Progression (IDP) protocols. Recursive logic hardening that allows swarm intelligence to grow 2x more resilient upon asset loss.</p>
-            </div>
-
-            <div class="card">
-                <h3>Kinetic Forensics <span class="patent-count">[3 Patents]</span></h3>
-                <p>3500-Series Catalytic Dissolution. Active anti-tamper hardware ensuring 100% volumetric atomization of proprietary logic within 248ms of breach.</p>
-            </div>
-
-            <div class="card">
-                <h3>Cross-Domain Flow <span class="patent-count">[2 Patents]</span></h3>
-                <p>Universal Alliance Protocols. Hardware-level abstraction layers (OAL) designed for seamless integration into Air, Land, Sea, and Space hulls.</p>
-            </div>
-        </div>
-
-        <div class="cta-box">
-            <button class="btn-cta" onclick="sendInquiry()">Request Full Patent Matrix Access</button>
-            <button class="btn-cta" onclick="window.location.href='index.html'">Secure Logout</button>
+        <div class="footer">
+            <strong>CUI // ITAR RESTRICTED</strong><br>
+            Handling per DoDI 5200.48 Required. Access subject to mandatory identity verification.<br>
+            © 2026 Veridix Strategic Defense Initiative | Sovereign Standard™
         </div>
     </div>
-
-    <div class="cui-page-footer">
-        <div class="cui-label">CONTROLLED UNCLASSIFIED INFORMATION // JURISDICTIONAL TRUTH ANCHOR ACTIVE</div>
-        <div class="cui-subtext">Proprietary and Confidential: Veridix Strategic Defense Initiative | 22-Patent Portfolio | Sovereign Standard™</div>
-    </div>
-
     <script>
-        function sendInquiry() {
-            const subject = "Verification Request: Veridix 22-Patent Portfolio Matrix";
-            const body = "To Veridix Operations,\n\nI am requesting a high-level review of the 22-patent portfolio categorized under the Sovereign Standard O
+        function checkAccess() {
+            const code = document.getElementById('idInput').value.trim();
+            if (code === "3100-QEC" || code === "VERIDIX-CEO-2026") {
+                window.location.href = "enclave.html";
+            } else {
+                alert("ACCESS DENIED: Reference Vol 1, Sec 3.1.");
+            }
+        }
+    </script>
+</body>
+</html>
