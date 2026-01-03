@@ -26,9 +26,9 @@
     <img src="image.png" alt="Veridix" class="corner-logo">
     <div class="container">
         <h1>Veridix</h1>
-        <div class="tagline">The 3-Layer Sovereign Sandwich™</div>
+        <div class="tagline">The Hardware-Anchored Sovereign Standard™</div>
         <div class="box">
-            <div class="status"><span class="dot"></span> SECURE INQUIRY GATEWAY</div>
+            <div class="status"><span class="dot"></span> SECURE INQUIRY GATEWAY ACTIVE</div>
             <button class="btn btn-cac" onclick="alert('Initializing CAC Handshake...')">Verify with CAC (PKI)</button>
             <div style="text-align:center; color:#222; margin-bottom:15px; font-size:0.6rem;">— OR —</div>
             <input type="password" id="idInput" class="input" placeholder="SOVEREIGN IDENTIFIER">
@@ -36,7 +36,8 @@
         </div>
         <div class="footer">
             <strong>CUI // ITAR RESTRICTED</strong><br>
-            Handling per DoDI 5200.48 Required. Distribution Statement D.
+            Handling per DoDI 5200.48 Required. Distribution Statement D.<br>
+            Veridix Strategic Defense Initiative
         </div>
     </div>
     <script>
@@ -44,7 +45,7 @@
             const code = document.getElementById('idInput').value.trim();
             if (code === "3100-QEC" || code === "VERIDIX-CEO-2026") {
                 window.location.href = "enclave.html";
-            } else { alert("ACCESS DENIED."); }
+            } else { alert("ACCESS DENIED: Unauthorized Identifier."); }
         }
     </script>
 </body>
