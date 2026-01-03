@@ -6,50 +6,123 @@
     <title>Veridix | Sovereign Standard™ Gateway</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #000; --panel: #0a0a0a; --text: #fff; --accent: #949494; --border: #1a1a1a; --green: #00ff00; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-        .container { text-align: center; max-width: 600px; padding: 20px; }
-        .logo-img { width: 180px; margin-bottom: 30px; filter: brightness(0) invert(1); }
-        h1 { font-size: 1.4rem; letter-spacing: 0.5rem; text-transform: uppercase; font-weight: 300; margin-bottom: 10px; }
-        .tagline { font-size: 0.8rem; color: var(--accent); letter-spacing: 0.2rem; margin-bottom: 50px; text-transform: uppercase; font-weight: 900; }
-        .box { border: 1px solid var(--border); background: var(--panel); padding: 40px; text-align: left; }
-        .status { font-size: 0.7rem; display: flex; align-items: center; margin-bottom: 25px; letter-spacing: 0.1rem; }
-        .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; margin-right: 10px; box-shadow: 0 0 8px var(--green); }
-        .input { width: 100%; background: #111; border: 1px solid var(--border); color: #fff; padding: 15px; margin-bottom: 20px; box-sizing: border-box; font-family: monospace; outline: none; }
-        .btn { width: 100%; padding: 15px; border: none; font-weight: 900; letter-spacing: 0.2rem; text-transform: uppercase; cursor: pointer; transition: 0.3s; margin-bottom: 15px; }
-        .btn-main { background: #fff; color: #000; }
-        .btn-cac { background: transparent; color: var(--green); border: 1px solid var(--green); }
-        .footer { margin-top: 50px; font-size: 0.65rem; color: #444; line-height: 1.6; text-align: center; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img src="image.png" alt="Veridix" class="logo-img">
-        <h1>Veridix</h1>
-        <div class="tagline">The Hardware-Anchored Sovereign Standard™</div>
-        <div class="box">
-            <div class="status"><span class="dot"></span> SECURE GATEWAY ACTIVE</div>
-            <button class="btn btn-cac" onclick="alert('Initializing CAC/PKI Handshake... Verification status prioritized for .mil and .gov domains.')">Verify with CAC (PKI)</button>
-            <div style="text-align:center; color:#222; margin-bottom:15px; font-size:0.6rem;">— OR —</div>
-            <input type="password" id="idInput" class="input" placeholder="SOVEREIGN IDENTIFIER">
-            <button class="btn btn-main" onclick="checkAccess()">Validate Credentials</button>
-        </div>
-        <div class="footer">
-            <strong>CUI // ITAR RESTRICTED DATA</strong><br>
-            Handling per DoDI 5200.48 required. Access priority for authorized DoD personnel only.
-        </div>
-    </div>
-    <script>
-        function checkAccess() {
-            const code = document.getElementById('idInput').value.trim();
-            const key = "3100-QEC"; // Standard Referral Key
-            const ceo = "VERIDIX-CEO-2026"; // Personal CEO Bypass
-            if (code === key || code === ceo) {
-                window.location.href = "enclave.html";
-            } else {
-                alert("ACCESS DENIED: Reference Volume 1, Section 3.1 for the Sovereign Identifier.");
-            }
+        :root { 
+            --bg: #000; 
+            --panel: #0a0a0a; 
+            --text: #fff; 
+            --accent: #949494; 
+            --border: #1a1a1a; 
+            --green: #00ff00; 
         }
-    </script>
-</body>
-</html>
+
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- Top Left Logo Positioning --- */
+        .top-left-logo {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 160px; /* Adjusted size for corner placement */
+            height: auto;
+            filter: brightness(0) invert(1);
+            z-index: 10;
+        }
+
+        .container { 
+            text-align: center; 
+            max-width: 600px; 
+            padding: 20px; 
+            position: relative;
+        }
+
+        h1 { 
+            font-size: 1.8rem; 
+            letter-spacing: 0.8rem; 
+            text-transform: uppercase; 
+            font-weight: 300; 
+            margin-bottom: 10px; 
+            color: var(--text);
+        }
+
+        .tagline { 
+            font-size: 0.8rem; 
+            color: var(--accent); 
+            letter-spacing: 0.3rem; 
+            margin-bottom: 50px; 
+            text-transform: uppercase; 
+            font-weight: 900; 
+        }
+
+        .box { 
+            border: 1px solid var(--border); 
+            background: var(--panel); 
+            padding: 45px; 
+            text-align: left; 
+            backdrop-filter: blur(5px);
+        }
+
+        .status { 
+            font-size: 0.7rem; 
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 25px; 
+            letter-spacing: 0.2rem; 
+            text-transform: uppercase;
+        }
+
+        .dot { 
+            width: 8px; 
+            height: 8px; 
+            background: var(--green); 
+            border-radius: 50%; 
+            margin-right: 12px; 
+            box-shadow: 0 0 10px var(--green); 
+        }
+
+        .input { 
+            width: 100%; 
+            background: #111; 
+            border: 1px solid var(--border); 
+            color: #fff; 
+            padding: 18px; 
+            margin-bottom: 20px; 
+            box-sizing: border-box; 
+            font-family: monospace; 
+            outline: none; 
+            font-size: 0.9rem;
+        }
+
+        .btn { 
+            width: 100%; 
+            padding: 18px; 
+            border: none; 
+            font-weight: 900; 
+            letter-spacing: 0.25rem; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            transition: 0.3s ease; 
+            margin-bottom: 15px; 
+            font-size: 0.8rem;
+        }
+
+        .btn-main { background: #fff; color: #000; }
+        .btn-main:hover { background: #ccc; }
+
+        .btn-cac { 
+            background: transparent; 
+            color: var(--green); 
+            border: 1px solid var(--green); 
+        }
+        .btn-cac:hover { background: rgba(0, 255, 0, 0.05); }
+
+        .
