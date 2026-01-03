@@ -8,36 +8,115 @@
     <style>
         :root { --bg: #000; --panel: #0a0a0a; --text: #fff; --accent: #949494; --border: #1a1a1a; --green: #00ff00; }
         body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 0; min-height: 100vh; }
+        
         .status-bar { background: #111; border-bottom: 1px solid var(--border); padding: 10px 40px; display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; z-index: 2000; }
         .status-text { font-family: monospace; font-size: 0.65rem; color: var(--green); letter-spacing: 0.1rem; text-transform: uppercase; }
         .corner-logo { position: fixed; top: 60px; left: 40px; width: 140px; filter: brightness(0) invert(1); z-index: 1000; }
-        .content-wrapper { padding: 140px 40px 180px 40px; max-width: 1200px; margin: 0 auto; }
-        .matrix-table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--border); }
-        .matrix-table th { background: #111; text-align: left; padding: 20px; color: var(--green); text-transform: uppercase; font-size: 0.7rem; border-bottom: 1px solid var(--border); }
-        .matrix-table td { padding: 20px; border-bottom: 1px solid var(--border); font-size: 0.85rem; color: var(--accent); }
+        
+        .content-wrapper { padding: 140px 40px 180px 40px; max-width: 1400px; margin: 0 auto; }
+        .header-title { text-align: right; margin-bottom: 50px; }
+        .header-title h2 { font-size: 1.1rem; letter-spacing: 0.3rem; text-transform: uppercase; font-weight: 300; border-bottom: 1px solid var(--border); display: inline-block; padding-bottom: 10px; }
+
+        .matrix-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.85rem; background: var(--panel); border: 1px solid var(--border); }
+        .matrix-table th { background: #111; text-align: left; padding: 15px; text-transform: uppercase; letter-spacing: 0.1rem; border-bottom: 1px solid var(--border); color: var(--green); font-size: 0.7rem; }
+        .matrix-table td { padding: 15px; border-bottom: 1px solid var(--border); line-height: 1.5; color: var(--accent); }
+        .matrix-table tr:hover { background: #0d0d0d; }
+        .matrix-table strong { color: #fff; }
+        
+        .reg-tag { font-family: monospace; color: #fff; background: #222; padding: 2px 6px; font-size: 0.65rem; border-radius: 2px; }
+
+        .cta-box { margin-top: 60px; text-align: center; }
+        .btn-cta { background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2rem; cursor: pointer; font-size: 0.75rem; font-weight: 700; transition: 0.3s; }
+        .btn-cta:hover { background: #fff; color: #000; }
+
+        .cui-page-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #000; border-top: 1px solid #1a1a1a; padding: 20px 0; text-align: center; z-index: 1000; }
     </style>
 </head>
 <body>
+
     <div class="status-bar">
-        <div class="status-text">SYSTEM STATUS: OPERATIONAL // AUTHENTICATED PERSONNEL: <span>ID_CEO_RAMSEY</span></div>
+        <div class="status-text">SYSTEM STATUS: OPERATIONAL // AUTHENTICATED: <span>CEO_ADMIN_RAMSEY</span></div>
     </div>
+
     <img src="image.png" alt="Veridix" class="corner-logo">
+
     <div class="content-wrapper">
-        <h2 style="text-align:right; text-transform:uppercase; letter-spacing:0.2rem; margin-bottom:40px;">Legal Compliance Matrix</h2>
+        <div class="header-title">
+            <h2>Regulatory Compliance Matrix</h2>
+            <p style="color: var(--accent); font-size: 0.7rem; text-transform: uppercase; margin-top: 5px;">22-Patent Portfolio // Federal Alignment Standards</p>
+        </div>
+
         <table class="matrix-table">
             <thead>
-                <tr><th>Sovereignty Layer</th><th>Patent Feat</th><th>Compliance Anchor</th></tr>
+                <tr>
+                    <th>Domain</th>
+                    <th>Patent Feats</th>
+                    <th>Compliance Requirement</th>
+                    <th>Regulatory Anchor</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>Layer 1: Governance</td><td>HMSR / LLS</td><td>DoDD 3000.09 (Human Intent Record)</td></tr>
-                <tr><td>Layer 2: Jurisdictional</td><td>JTA-2100</td><td>Law of Armed Conflict (LOAC) Hardening</td></tr>
-                <tr><td>Layer 3: Tactical</td><td>FAD-3500</td><td>DoDI 5200.39 (Anti-Tamper Protection)</td></tr>
-                <tr><td>Domain: Infrastructure</td><td>O-TDR</td><td>Sub-Surface Fiber Security (NIST-800)</td></tr>
+                <tr>
+                    <td><strong>Kinetic Autonomy</strong></td>
+                    <td>LLS, HMSR, HITL-O</td>
+                    <td>Positive human control & intent verification.</td>
+                    <td><span class="reg-tag">DoDD 3000.09</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Hardware Security</strong></td>
+                    <td>LLS, HELB, DDR</td>
+                    <td>Platform Firmware Resiliency & Air-Gap Logic.</td>
+                    <td><span class="reg-tag">NIST SP 800-193</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Forensic Denial</strong></td>
+                    <td>FAD-3500, OTC</td>
+                    <td>Active Anti-Tamper for Critical Program Information.</td>
+                    <td><span class="reg-tag">DoDI 5200.39</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Cyber-Sovereignty</strong></td>
+                    <td>CSI, BLG, JTA</td>
+                    <td>Zero-Trust Interface & Biometric Interlock.</td>
+                    <td><span class="reg-tag">DoDI 8500.01</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Resilient Comms</strong></td>
+                    <td>aBFT Ghost Mesh, CTV</td>
+                    <td>Leaderless consensus in EW-denied environments.</td>
+                    <td><span class="reg-tag">NDAA Sec. 889</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Stealth & Encryption</strong></td>
+                    <td>QEC-3100, Mime-Link 3210</td>
+                    <td>Hardware-anchored entropy & mimetic masking.</td>
+                    <td><span class="reg-tag">FIPS 140-3</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Maritime Infrastructure</strong></td>
+                    <td>O-TDR, Deep-Sea OAL</td>
+                    <td>Atomic-level tap detection in fiber infrastructure.</td>
+                    <td><span class="reg-tag">Executive Order 14110</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Jurisdictional Truth</strong></td>
+                    <td>JIM, JTA, AUD</td>
+                    <td>Legal residency of compute & jurisdictional lockout.</td>
+                    <td><span class="reg-tag">ITAR / LOAC</span></td>
+                </tr>
             </tbody>
         </table>
-        <div style="text-align:center; padding:40px;">
-            <button style="background:transparent; color:#fff; border:1px solid #fff; padding:10px 30px; cursor:pointer;" onclick="window.location.href='enclave.html'">Back to Enclave</button>
+
+        <div class="cta-box">
+            <button class="btn-cta" onclick="window.location.href='enclave.html'">Return to Enclave</button>
+            <button class="btn-cta" onclick="alert('Submission Package Build Initialized. Verifying EDIPI...')">Download Full Compliance Package</button>
         </div>
     </div>
+
+    <div class="cui-page-footer">
+        <div style="font-size: 0.75rem; font-weight: 900; letter-spacing: 0.2rem; color: #fff;">CUI // JURISDICTIONAL TRUTH ANCHOR ACTIVE</div>
+        <div style="font-size: 0.6rem; color: var(--accent); text-transform: uppercase;">© 2026 Veridix Strategic Defense Initiative | Sovereign Standard™ Compliance Matrix</div>
+    </div>
+
 </body>
 </html>
