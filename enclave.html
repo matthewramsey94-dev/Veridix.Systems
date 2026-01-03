@@ -7,96 +7,122 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --bg: #000; --panel: #0a0a0a; --text: #fff; --accent: #949494; --border: #1a1a1a; --green: #00ff00; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 0; min-height: 100vh; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 0; min-height: 100vh; display: block; }
         .status-bar { background: #111; border-bottom: 1px solid var(--border); padding: 10px 40px; display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; z-index: 2000; }
         .status-text { font-family: monospace; font-size: 0.65rem; color: var(--green); letter-spacing: 0.1rem; text-transform: uppercase; }
         .corner-logo { position: fixed; top: 60px; left: 40px; width: 140px; filter: brightness(0) invert(1); z-index: 1000; }
-        .content-wrapper { padding: 140px 40px 180px 40px; max-width: 1300px; margin: 0 auto; }
-        .layer-section { margin-bottom: 80px; }
-        .layer-header { border-left: 4px solid var(--green); padding-left: 20px; margin-bottom: 30px; }
-        .layer-header h2 { font-size: 1.4rem; letter-spacing: 0.2rem; text-transform: uppercase; color: #fff; margin: 0; }
-        .layer-header p { font-size: 0.8rem; color: var(--green); letter-spacing: 0.1rem; text-transform: uppercase; margin-top: 5px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 20px; }
-        .card { background: var(--panel); border: 1px solid var(--border); padding: 30px; }
-        .card h3 { font-size: 0.9rem; letter-spacing: 0.1rem; text-transform: uppercase; margin-bottom: 15px; color: var(--green); }
-        .card p { font-size: 0.85rem; line-height: 1.7; color: var(--accent); margin-bottom: 15px; }
-        .feat-tag { font-family: monospace; font-size: 0.65rem; color: #fff; background: #1a1a1a; padding: 3px 8px; border-radius: 2px; border: 1px solid #333; }
+        .content-wrapper { padding: 140px 40px 180px 40px; max-width: 1400px; margin: 0 auto; }
+        .layer-header { border-left: 3px solid var(--green); padding-left: 20px; margin: 60px 0 30px; text-transform: uppercase; letter-spacing: 0.2rem; }
+        .layer-header h2 { font-size: 1.3rem; margin: 0; }
+        .layer-header p { font-size: 0.75rem; color: var(--accent); margin-top: 5px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 15px; }
+        .card { background: var(--panel); border: 1px solid var(--border); padding: 25px; display: flex; flex-direction: column; }
+        .card h3 { font-size: 0.85rem; letter-spacing: 0.1rem; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+        .card p { font-size: 0.8rem; line-height: 1.6; color: var(--accent); margin-bottom: auto; }
+        .patent-label { font-family: monospace; font-size: 0.6rem; color: #444; margin-top: 15px; border-top: 1px solid #1a1a1a; padding-top: 10px; }
         .cui-page-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #000; border-top: 1px solid #1a1a1a; padding: 20px 0; text-align: center; z-index: 1000; }
     </style>
 </head>
 <body>
     <div class="status-bar">
-        <div class="status-text">SYSTEM STATUS: OPERATIONAL // AUTHENTICATED PERSONNEL: <span>ID_CEO_RAMSEY</span></div>
+        <div class="status-text">SYSTEM STATUS: OPERATIONAL // AUTHENTICATED: <span>CEO_ADMIN_RAMSEY</span></div>
     </div>
     <img src="image.png" alt="Veridix" class="corner-logo">
 
     <div class="content-wrapper">
-        
-        <div class="layer-section">
-            <div class="layer-header">
-                <h2>Layer 1: The Sovereign Circuit™</h2>
-                <p>Hardware-Enforced Governance // 4 Foundational Patents</p>
+        <div style="text-align: right; margin-bottom: 50px;">
+            <h1 style="font-size: 1.5rem; text-transform: uppercase; letter-spacing: 0.4rem; font-weight: 300;">Technical Enclave</h1>
+            <p style="color: var(--green); font-size: 0.7rem; letter-spacing: 0.1rem;">[ 22-PATENT PORTFOLIO AUDIT ]</p>
+        </div>
+
+        <div class="layer-header">
+            <h2>Layer 1: The Sovereign Circuit™</h2>
+            <p>Hardware-Enforced Governance & Foundational LSS</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>LLS Foundational Architecture</h3>
+                <p>The Logically Separate System (LSS). Third-party hardware logic solver non-conflicted and distinct from primary control systems.</p>
+                <div class="patent-label">Original Patent 3</div>
             </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>LLS: The Silicon Moat <span class="feat-tag">PATENT 3</span></h3>
-                    <p>Physical air-gap architecture. Safety protocols are etched into a logically separate hardware layer, making it physically impossible for hacked mission AI to disable safety interlocks.</p>
-                </div>
-                <div class="card">
-                    <h3>CSI: Biometric Interlock <span class="feat-tag">PATENT 5</span></h3>
-                    <p>Uses a Cognitive State Index to bridge human pulse to machine payload. Physically locks command circuits if operator duress or panic is detected.</p>
-                </div>
-                <div class="card">
-                    <h3>HMSR: Forensic Truth Anchor <span class="feat-tag">PATENT 4</span></h3>
-                    <p>Out-of-Band (OOB) immutable ledger. Records microsecond-perfect telemetry on separate silicon for legal indemnity and JAG-level forensics.</p>
-                </div>
+            <div class="card">
+                <h3>CSI (Cognitive State Index)</h3>
+                <p>Settlement Shield intent verification. Detects operator duress or panic, physically locking command circuits via physiological indexing.</p>
+                <div class="patent-label">Patent 5: Intent Verification</div>
+            </div>
+            <div class="card">
+                <h3>HMSR (Truth Anchor)</h3>
+                <p>Out-of-Band Human-Machine State Record. Immutable silicon audit of kinetic intent, granting legal indemnity for commanders.</p>
+                <div class="patent-label">Original Patent 4 / JTA-2100</div>
+            </div>
+            <div class="card">
+                <h3>HELB & CTV</h3>
+                <p>Hardened Edge Logic Barrier. Air-gaps governance logic and verifies local sensor data against an out-of-band Ghost Mesh.</p>
+                <div class="patent-label">Expanded Patent 1</div>
             </div>
         </div>
 
-        <div class="layer-section">
-            <div class="layer-header">
-                <h2>Layer 2: Jurisdictional Sovereignty™</h2>
-                <p>The Legal Firewall // Jimmy 2110 & JTA 2100 Architecture</p>
+        <div class="layer-header">
+            <h2>Layer 2: Jurisdictional Sovereignty™</h2>
+            <p>The Legal Firewall & Autonomous Economics</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>JIM-2110 (Hardware Passport)</h3>
+                <p>Audits the legal residency of compute instructions. Physically severs the bus if regional jurisdictional laws are violated.</p>
+                <div class="patent-label">Patent 17: Jurisdictional Truth Anchor</div>
             </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>JIM-2110: Hardware Passport</h3>
-                    <p>Secure hardware element etched with cryptographically signed regional laws. Treats geographic borders like physical silicon walls.</p>
-                </div>
-                <div class="card">
-                    <h3>JTA-2100: Physical Veto</h3>
-                    <p>A physical data shunt (2180) that severs weapon signal paths if jurisdictional boundaries are violated. Law of Armed Conflict as physical law.</p>
-                </div>
+            <div class="card">
+                <h3>HITL-O (Hardware Veto)</h3>
+                <p>Human-in-the-Loop Override. A hardware-level interlock making it physically impossible for AI to act without a human "Go" signal.</p>
+                <div class="patent-label">Expanded Patent 10</div>
+            </div>
+            <div class="card">
+                <h3>Data Diode Refinery (DDR)</h3>
+                <p>Silicon-level Hardware Runtime Integrity (HRI). Signs data at the gate while stripping PII for secure AI training.</p>
+                <div class="patent-label">Expanded Patent 4</div>
+            </div>
+            <div class="card">
+                <h3>BLG (Biological Lockout Gate)</h3>
+                <p>Physiological interlock that disconnects command circuits if the operator is being coerced or hijacked.</p>
+                <div class="patent-label">Expanded Patent 16</div>
             </div>
         </div>
 
-        <div class="layer-section">
-            <div class="layer-header">
-                <h2>Layer 3: Tactical Dominance™</h2>
-                <p>The Master Patent Omnibus // 17 Expanded Protocols</p>
+        <div class="layer-header">
+            <h2>Layer 3: Tactical Dominance™</h2>
+            <p>Omnibus Infrastructure & Stochastic Security</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>QEC-3100 (Quantum Entropy)</h3>
+                <p>Uses subatomic noise to seed stochastic maneuvers. Renders flight paths mathematically unsolvable by adversarial predictive modeling.</p>
+                <div class="patent-label">Master Patent Omnibus 3100</div>
             </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>QEC-3100: Stochastic Shield</h3>
-                    <p>Quantum Entropy Core utilizing subatomic noise to seed flight paths. Renders maneuvers mathematically unsolvable by adversarial AI models.</p>
-                </div>
-                <div class="card">
-                    <h3>OEH-3400: Parasitic Harvesting</h3>
-                    <p>Omnivorous Energy Harvesting. Asset scavenges power from high-voltage lines and enemy EW jamming signals for "Infinite Persistence."</p>
-                </div>
-                <div class="card">
-                    <h3>FAD-3500: Forensic Denial</h3>
-                    <p>Catalytic Suicide: silicon substrates atomize into inert sludge within 248ms of unauthorized chassis decapsulation or hardware probing.</p>
-                </div>
-                <div class="card">
-                    <h3>O-TDR: Deep-Sea Sovereignty</h3>
-                    <p>Detects atomic-level light leakage in fiber-optic infrastructure to identify state-level taps and trigger automated physical disconnect.</p>
-                </div>
+            <div class="card">
+                <h3>OEH-3400 (Parasitic Persistence)</h3>
+                <p>Omnivorous Energy Harvesting. Scavenges power from high-voltage lines or enemy EW signals for "Infinite Persistence."</p>
+                <div class="patent-label">Master Patent Omnibus 3400</div>
+            </div>
+            <div class="card">
+                <h3>Mime-Link (3210)</h3>
+                <p>Mimetic Signal Masking. Encodes telemetry within signals sounding like biological noise (shrimp clicks) for infinite stealth.</p>
+                <div class="patent-label">Master Patent Omnibus 3210</div>
+            </div>
+            <div class="card">
+                <h3>FAD-3500 (Catalytic Suicide)</h3>
+                <p>Silicon substrates atomize into inert sludge within 248ms of chassis breach detection. Forensic Denial via chemical reaction.</p>
+                <div class="patent-label">Master Patent Omnibus 3500</div>
+            </div>
+            <div class="card">
+                <h3>O-TDR (Deep-Sea Sovereignty)</h3>
+                <p>Detects light leakage in fiber cables to identify state-level taps and trigger physical disconnects on seafloor assets.</p>
+                <div class="patent-label">Expanded Patent 14</div>
             </div>
         </div>
         
-        <div style="text-align:center; padding: 60px;">
-            <button style="background:transparent; color:#fff; border:1px solid #fff; padding:15px 40px; text-transform:uppercase; letter-spacing:0.2rem; cursor:pointer;" onclick="window.location.href='compliance.html'">View Regulatory Compliance Matrix</button>
+        <div style="text-align: center; margin: 80px 0;">
+             <button class="btn" style="width: auto; padding: 20px 50px;" onclick="window.location.href='compliance.html'">Access Regulatory Compliance Matrix</button>
         </div>
     </div>
 
