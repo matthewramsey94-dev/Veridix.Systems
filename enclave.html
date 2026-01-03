@@ -7,68 +7,102 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --bg: #000; --panel: #0a0a0a; --text: #fff; --accent: #949494; --border: #1a1a1a; --green: #00ff00; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 0; min-height: 100vh; display: block; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 0; min-height: 100vh; }
         .status-bar { background: #111; border-bottom: 1px solid var(--border); padding: 10px 40px; display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; z-index: 2000; }
         .status-text { font-family: monospace; font-size: 0.65rem; color: var(--green); letter-spacing: 0.1rem; text-transform: uppercase; }
-        .status-text span { color: #fff; margin-left: 10px; }
         .corner-logo { position: fixed; top: 60px; left: 40px; width: 140px; filter: brightness(0) invert(1); z-index: 1000; }
-        .content-wrapper { padding: 140px 40px 180px 40px; }
-        .header-title { max-width: 1200px; margin: 0 auto 50px; text-align: right; }
-        .header-title h2 { font-size: 1.1rem; letter-spacing: 0.3rem; text-transform: uppercase; font-weight: 300; border-bottom: 1px solid var(--border); display: inline-block; padding-bottom: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .card { background: var(--panel); border: 1px solid var(--border); padding: 35px; }
-        .card h3 { font-size: 0.85rem; letter-spacing: 0.15rem; text-transform: uppercase; margin-bottom: 15px; color: var(--green); display: flex; justify-content: space-between; align-items: center; }
-        .card .patent-tag { color: #444; font-size: 0.6rem; font-family: monospace; border: 1px solid #222; padding: 2px 6px; }
-        .card p { font-size: 0.85rem; line-height: 1.7; color: var(--accent); }
-        .cta-box { max-width: 1200px; margin: 60px auto; text-align: center; border-top: 1px solid var(--border); padding-top: 40px; }
-        .btn-cta { background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2rem; cursor: pointer; font-size: 0.75rem; font-weight: 700; margin: 10px; }
+        .content-wrapper { padding: 140px 40px 180px 40px; max-width: 1300px; margin: 0 auto; }
+        .layer-section { margin-bottom: 80px; }
+        .layer-header { border-left: 4px solid var(--green); padding-left: 20px; margin-bottom: 30px; }
+        .layer-header h2 { font-size: 1.4rem; letter-spacing: 0.2rem; text-transform: uppercase; color: #fff; margin: 0; }
+        .layer-header p { font-size: 0.8rem; color: var(--green); letter-spacing: 0.1rem; text-transform: uppercase; margin-top: 5px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 20px; }
+        .card { background: var(--panel); border: 1px solid var(--border); padding: 30px; }
+        .card h3 { font-size: 0.9rem; letter-spacing: 0.1rem; text-transform: uppercase; margin-bottom: 15px; color: var(--green); }
+        .card p { font-size: 0.85rem; line-height: 1.7; color: var(--accent); margin-bottom: 15px; }
+        .feat-tag { font-family: monospace; font-size: 0.65rem; color: #fff; background: #1a1a1a; padding: 3px 8px; border-radius: 2px; border: 1px solid #333; }
         .cui-page-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #000; border-top: 1px solid #1a1a1a; padding: 20px 0; text-align: center; z-index: 1000; }
-        .cui-label { font-size: 0.75rem; font-weight: 900; letter-spacing: 0.2rem; text-transform: uppercase; margin-bottom: 5px; }
     </style>
 </head>
 <body>
     <div class="status-bar">
-        <div class="status-text">SYSTEM STATUS: OPERATIONAL // AUTHENTICATED PERSONNEL: <span>ID_3100_SECURE</span></div>
+        <div class="status-text">SYSTEM STATUS: OPERATIONAL // AUTHENTICATED PERSONNEL: <span>ID_CEO_RAMSEY</span></div>
     </div>
     <img src="image.png" alt="Veridix" class="corner-logo">
+
     <div class="content-wrapper">
-        <div class="header-title">
-            <h2>Sovereign Standard™ Enclave</h2>
-            <p style="color: var(--accent); font-size: 0.7rem; text-transform: uppercase; margin-top: 10px;">22-Patent Portfolio // Operational Feats</p>
+        
+        <div class="layer-section">
+            <div class="layer-header">
+                <h2>Layer 1: The Sovereign Circuit™</h2>
+                <p>Hardware-Enforced Governance // 4 Foundational Patents</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>LLS: The Silicon Moat <span class="feat-tag">PATENT 3</span></h3>
+                    <p>Physical air-gap architecture. Safety protocols are etched into a logically separate hardware layer, making it physically impossible for hacked mission AI to disable safety interlocks.</p>
+                </div>
+                <div class="card">
+                    <h3>CSI: Biometric Interlock <span class="feat-tag">PATENT 5</span></h3>
+                    <p>Uses a Cognitive State Index to bridge human pulse to machine payload. Physically locks command circuits if operator duress or panic is detected.</p>
+                </div>
+                <div class="card">
+                    <h3>HMSR: Forensic Truth Anchor <span class="feat-tag">PATENT 4</span></h3>
+                    <p>Out-of-Band (OOB) immutable ledger. Records microsecond-perfect telemetry on separate silicon for legal indemnity and JAG-level forensics.</p>
+                </div>
+            </div>
         </div>
-        <div class="grid">
-            <div class="card">
-                <h3>CSI <span class="patent-tag">Cyber-Sovereign Interface</span></h3>
-                <p>Hardware-gated bridge between mission software and sovereign safety logic. Prevents payload corruption from affecting kinetic governance.</p>
+
+        <div class="layer-section">
+            <div class="layer-header">
+                <h2>Layer 2: Jurisdictional Sovereignty™</h2>
+                <p>The Legal Firewall // Jimmy 2110 & JTA 2100 Architecture</p>
             </div>
-            <div class="card">
-                <h3>HMSR <span class="patent-tag">Human-Machine State Record</span></h3>
-                <p>Immutable, hardware-verified audit trail of kinetic intent. Direct alignment with <strong>DoDD 3000.09</strong> compliance mandates.</p>
-            </div>
-            <div class="card">
-                <h3>LLS <span class="patent-tag">Logically Separate System</span></h3>
-                <p>Physically isolated silicon layer (The "Moat") executing safety protocols independently of primary flight computers.</p>
-            </div>
-            <div class="card">
-                <h3>HELB <span class="patent-tag">Hardened Edge Logic Barrier</span></h3>
-                <p>Hardware-level enforcement of the Sovereign Perimeter. Prevents lateral movement or logic injection during asset compromise.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>JIM-2110: Hardware Passport</h3>
+                    <p>Secure hardware element etched with cryptographically signed regional laws. Treats geographic borders like physical silicon walls.</p>
+                </div>
+                <div class="card">
+                    <h3>JTA-2100: Physical Veto</h3>
+                    <p>A physical data shunt (2180) that severs weapon signal paths if jurisdictional boundaries are violated. Law of Armed Conflict as physical law.</p>
+                </div>
             </div>
         </div>
-        <div class="cta-box">
-            <button class="btn-cta" onclick="window.location.href='compliance.html'">View Compliance Matrix</button>
-            <button class="btn-cta" onclick="sendInquiry()">Request Technical Data</button>
+
+        <div class="layer-section">
+            <div class="layer-header">
+                <h2>Layer 3: Tactical Dominance™</h2>
+                <p>The Master Patent Omnibus // 17 Expanded Protocols</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>QEC-3100: Stochastic Shield</h3>
+                    <p>Quantum Entropy Core utilizing subatomic noise to seed flight paths. Renders maneuvers mathematically unsolvable by adversarial AI models.</p>
+                </div>
+                <div class="card">
+                    <h3>OEH-3400: Parasitic Harvesting</h3>
+                    <p>Omnivorous Energy Harvesting. Asset scavenges power from high-voltage lines and enemy EW jamming signals for "Infinite Persistence."</p>
+                </div>
+                <div class="card">
+                    <h3>FAD-3500: Forensic Denial</h3>
+                    <p>Catalytic Suicide: silicon substrates atomize into inert sludge within 248ms of unauthorized chassis decapsulation or hardware probing.</p>
+                </div>
+                <div class="card">
+                    <h3>O-TDR: Deep-Sea Sovereignty</h3>
+                    <p>Detects atomic-level light leakage in fiber-optic infrastructure to identify state-level taps and trigger automated physical disconnect.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align:center; padding: 60px;">
+            <button style="background:transparent; color:#fff; border:1px solid #fff; padding:15px 40px; text-transform:uppercase; letter-spacing:0.2rem; cursor:pointer;" onclick="window.location.href='compliance.html'">View Regulatory Compliance Matrix</button>
         </div>
     </div>
+
     <div class="cui-page-footer">
-        <div class="cui-label">CUI // JURISDICTIONAL TRUTH ANCHOR ACTIVE</div>
-        <div style="font-size: 0.6rem; color: var(--accent); text-transform: uppercase;">Proprietary & Confidential: Veridix Strategic Defense Initiative</div>
+        <div style="font-size: 0.75rem; font-weight: 900; letter-spacing: 0.2rem;">CUI // JURISDICTIONAL TRUTH ANCHOR ACTIVE</div>
+        <div style="font-size: 0.6rem; color: var(--accent); text-transform: uppercase;">© 2026 Veridix Strategic Defense Initiative | 22-Patent Portfolio</div>
     </div>
-    <script>
-        function sendInquiry() {
-            const subject = "Technical Request: Veridix Sovereign Standard Feats";
-            const body = "I am requesting Volume 2 data for [Organization]. Validated identity attached.";
-            window.location.href = "mailto:m.ramsey@veridix.systems?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-        }
-    </script>
 </body>
 </html>
