@@ -4,149 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technical Enclave | Veridix Sovereign Standard™</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --bg: #000000; 
-            --panel: #0a0a0a; 
-            --text-main: #ffffff; 
-            --text-accent: #949494; 
-            --border-color: #1a1a1a; 
-            --status-green: #00ff00; 
-        }
-
+        :root { --bg: #000; --panel: #0a0a0a; --text: #fff; --accent: #949494; --border: #1a1a1a; --green: #00ff00; }
+        
         body { 
-            background-color: var(--bg); 
-            color: var(--text-main); 
+            background: var(--bg); 
+            color: var(--text); 
             font-family: 'Inter', sans-serif; 
             margin: 0; 
-            padding: 40px 20px 140px 20px; /* Space for the fixed footer */
+            padding: 120px 40px; /* Space for logo and footer */
             min-height: 100vh;
-            display: block; /* Ensures visibility */
-            overflow-x: hidden;
+            display: block; 
         }
 
-        /* --- Header Section --- */
-        .header { 
-            max-width: 1100px; 
-            margin: 0 auto 60px; 
-            border-bottom: 1px solid var(--border-color); 
-            padding-bottom: 30px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
+        .corner-logo {
+            position: fixed; /* Stays put while scrolling */
+            top: 40px;
+            left: 40px;
+            width: 140px;
+            filter: brightness(0) invert(1);
+            z-index: 1000;
         }
 
-        .header-logo { 
-            width: 140px; 
-            height: auto;
-            filter: brightness(0) invert(1); 
+        .header-title {
+            max-width: 1100px;
+            margin: 0 auto 50px;
+            text-align: right; /* Balanced against the left-side logo */
         }
 
-        .header h2 { 
-            font-size: 1.1rem; 
-            letter-spacing: 0.3rem; 
-            text-transform: uppercase; 
-            margin: 0; 
+        .header-title h2 {
+            font-size: 1.1rem;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
             font-weight: 300;
-            color: var(--text-main);
+            border-bottom: 1px solid var(--border);
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
-        /* --- Technical Card Grid --- */
         .grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 20px; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
             max-width: 1100px; 
             margin: 0 auto; 
-            z-index: 5;
-            position: relative;
         }
 
-        .card { 
-            background: var(--panel); 
-            border: 1px solid var(--border-color); 
-            padding: 35px; 
-            transition: border 0.3s ease;
-        }
+        .card { background: var(--panel); border: 1px solid var(--border); padding: 40px; }
+        .card h3 { font-size: 0.85rem; letter-spacing: 0.15rem; text-transform: uppercase; margin-bottom: 15px; color: var(--green); }
+        .card p { font-size: 0.85rem; line-height: 1.8; color: var(--accent); }
 
-        .card:hover {
-            border-color: #333;
-        }
+        .cta-box { max-width: 1100px; margin: 60px auto; text-align: center; border-top: 1px solid var(--border); padding-top: 40px; }
+        .btn-cta { background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2rem; cursor: pointer; font-size: 0.75rem; font-weight: 700; }
 
-        .card h3 { 
-            font-size: 0.85rem; 
-            letter-spacing: 0.15rem; 
-            text-transform: uppercase; 
-            margin-bottom: 15px; 
-            color: var(--status-green); 
-        }
-
-        .card p { 
-            font-size: 0.85rem; 
-            line-height: 1.8; 
-            color: var(--text-accent); 
-        }
-
-        /* --- Action Controls --- */
-        .cta-box { 
-            max-width: 1100px; 
-            margin: 60px auto; 
-            text-align: center; 
-            border-top: 1px solid var(--border-color); 
-            padding-top: 40px; 
-        }
-
-        .btn-cta { 
-            background: transparent; 
-            color: #fff; 
-            border: 1px solid #fff; 
-            padding: 15px 35px; 
-            text-transform: uppercase; 
-            letter-spacing: 0.2rem; 
-            cursor: pointer; 
-            font-size: 0.75rem;
-            font-weight: 700;
-            transition: 0.3s ease;
-        }
-
-        .btn-cta:hover { 
-            background: #fff; 
-            color: #000; 
-        }
-
-        /* --- Fixed CUI Footer --- */
         .cui-page-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #000;
-            border-top: 1px solid var(--border-color);
-            padding: 25px 0;
-            text-align: center;
-            z-index: 100;
+            position: fixed; bottom: 0; left: 0; width: 100%; background: #000; border-top: 1px solid #1a1a1a; padding: 20px 0; text-align: center; z-index: 100;
         }
-
-        .cui-label {
-            font-size: 0.75rem;
-            font-weight: 900;
-            letter-spacing: 0.25rem;
-            text-transform: uppercase;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-
-        .cui-subtext {
-            font-size: 0.6rem;
-            color: var(--text-accent);
-            letter-spacing: 0.05rem;
-            text-transform: uppercase;
-        }
+        .cui-label { font-size: 0.75rem; font-weight: 900; letter-spacing: 0.2rem; text-transform: uppercase; margin-bottom: 5px; }
+        .cui-subtext { font-size: 0.65rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05rem; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <img src="image.png" alt="Veridix" class="header-logo">
-        <h2>
+    <img src="image.png" alt="Veridix" class="corner-logo">
+
+    <div class="header-title">
+        <h2>Sovereign Standard™ Enclave</h2>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Quantum Stochastic Logic (3100)</h3>
+            <p>Seeding autonomous maneuvers with true quantum entropy to render swarms mathematically unsolvable against adversarial predictive modeling.</p>
+        </div>
+        <div class="card">
+            <h3>Mimetic Signal Masking</h3>
+            <p>Encoding telemetry within biological noise patterns (Lorentz Attractor physics) for infinite stealth in contested maritime domains.</p>
+        </div>
+        <div class="card">
+            <h3>Forensic Finality (3500)</h3>
+            <p>Active Anti-Tamper: 248ms catalytic dissolution of proprietary silicon substrates upon detection of chassis compromise.</p>
+        </div>
+        <div class="card">
+            <h3>Hegseth Mandate Alignment</h3>
+            <p>Directly satisfying the requirement for <strong>"Lean Lethality"</strong> via hardware-anchored autonomous logic and air-gapped safety protocols.</p>
+        </div>
+    </div>
+
+    <div class="cta-box">
+        <button class="btn-cta" onclick="alert('Access Request Logged.')">Request Technical Data</button>
+        <button class="btn-cta" onclick="window.location.href='index.html'">Logout</button>
+    </div>
+
+    <div class="cui-page-footer">
+        <div class="cui-label">CONTROLLED UNCLASSIFIED INFORMATION // JURISDICTIONAL TRUTH ANCHOR ACTIVE</div>
+        <div class="cui-subtext">Proprietary and Confidential: Veridix Strategic Defense Initiative | Sovereign Standard™</div>
+    </div>
+
+</body>
+</html>
