@@ -4,75 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technical Enclave | Veridix Sovereign Standard™</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --bg: #000; 
+            --bg: #000000; 
             --panel: #0a0a0a; 
-            --text: #fff; 
-            --accent: #949494; 
-            --border: #1a1a1a; 
-            --green: #00ff00; 
-        }
-        body { 
-            background: var(--bg); 
-            color: var(--text); 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 40px 20px 120px 20px; /* Padding for the fixed footer */
-            min-height: 100vh;
+            --text-main: #ffffff; 
+            --text-accent: #949494; 
+            --border-color: #1a1a1a; 
+            --status-green: #00ff00; 
         }
 
-        /* --- Header with Logo --- */
+        body { 
+            background-color: var(--bg); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            padding: 40px 20px 140px 20px; /* Space for the fixed footer */
+            min-height: 100vh;
+            display: block; /* Ensures visibility */
+            overflow-x: hidden;
+        }
+
+        /* --- Header Section --- */
         .header { 
             max-width: 1100px; 
             margin: 0 auto 60px; 
-            border-bottom: 1px solid var(--border); 
+            border-bottom: 1px solid var(--border-color); 
             padding-bottom: 30px; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
         }
+
         .header-logo { 
             width: 140px; 
+            height: auto;
             filter: brightness(0) invert(1); 
         }
+
         .header h2 { 
             font-size: 1.1rem; 
             letter-spacing: 0.3rem; 
             text-transform: uppercase; 
             margin: 0; 
             font-weight: 300;
+            color: var(--text-main);
         }
 
-        /* --- Technical Grid --- */
+        /* --- Technical Card Grid --- */
         .grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 20px; 
             max-width: 1100px; 
             margin: 0 auto; 
+            z-index: 5;
+            position: relative;
         }
+
         .card { 
             background: var(--panel); 
-            border: 1px solid var(--border); 
+            border: 1px solid var(--border-color); 
             padding: 35px; 
-            transition: transform 0.3s ease;
+            transition: border 0.3s ease;
         }
+
         .card:hover {
             border-color: #333;
         }
+
         .card h3 { 
             font-size: 0.85rem; 
             letter-spacing: 0.15rem; 
             text-transform: uppercase; 
             margin-bottom: 15px; 
-            color: var(--green); 
+            color: var(--status-green); 
         }
+
         .card p { 
             font-size: 0.85rem; 
             line-height: 1.8; 
-            color: var(--accent); 
+            color: var(--text-accent); 
         }
 
         /* --- Action Controls --- */
@@ -80,39 +93,41 @@
             max-width: 1100px; 
             margin: 60px auto; 
             text-align: center; 
-            border-top: 1px solid var(--border); 
+            border-top: 1px solid var(--border-color); 
             padding-top: 40px; 
         }
+
         .btn-cta { 
             background: transparent; 
             color: #fff; 
             border: 1px solid #fff; 
-            padding: 15px 30px; 
+            padding: 15px 35px; 
             text-transform: uppercase; 
             letter-spacing: 0.2rem; 
             cursor: pointer; 
-            transition: 0.3s; 
-            margin: 10px; 
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             font-weight: 700;
+            transition: 0.3s ease;
         }
+
         .btn-cta:hover { 
             background: #fff; 
             color: #000; 
         }
 
-        /* --- Formal CUI Footer --- */
+        /* --- Fixed CUI Footer --- */
         .cui-page-footer {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
             background: #000;
-            border-top: 1px solid #1a1a1a;
+            border-top: 1px solid var(--border-color);
             padding: 25px 0;
             text-align: center;
-            z-index: 10;
+            z-index: 100;
         }
+
         .cui-label {
             font-size: 0.75rem;
             font-weight: 900;
@@ -121,9 +136,10 @@
             color: #fff;
             margin-bottom: 8px;
         }
+
         .cui-subtext {
             font-size: 0.6rem;
-            color: var(--accent);
+            color: var(--text-accent);
             letter-spacing: 0.05rem;
             text-transform: uppercase;
         }
@@ -133,33 +149,4 @@
 
     <div class="header">
         <img src="image.png" alt="Veridix" class="header-logo">
-        <h2>Sovereign Standard™ Enclave</h2>
-    </div>
-
-    <div class="grid">
-        <div class="card">
-            <h3>Quantum Stochastic Logic (3100)</h3>
-            <p>Seeding maneuvers with true quantum entropy to render swarms mathematically unsolvable for adversarial predictive modeling.</p>
-        </div>
-        <div class="card">
-            <h3>Mimetic Signal Masking</h3>
-            <p>Encoding telemetry within biological noise patterns (Lorentz Attractor physics) for infinite stealth in contested environments.</p>
-        </div>
-        <div class="card">
-            <h3>Forensic Finality (3500)</h3>
-            <p>Active Anti-Tamper: **248ms catalytic dissolution** of proprietary silicon substrates upon detection of a chassis breach.</p>
-        </div>
-        <div class="card">
-            <h3>Hegseth Mandate Alignment</h3>
-            <p>Directly satisfying the requirement for <strong>"Lean Lethality"</strong> via hardware-anchored autonomous logic.</p>
-        </div>
-        <div class="card">
-            <h3>Logically Separate System (LSS)</h3>
-            <p>A physically and logically isolated computing layer that sits outside the main control loop to guarantee non-conflicted audit trails.</p>
-        </div>
-    </div>
-
-    <div class="cta-box">
-        <button class="btn-cta" onclick="alert('Inquiry Logged. Technical Interchange (TIM) request pending verification.')">Request Volume 2 Access</button>
-        <button class="btn-cta" onclick="window.location.href='index.html'">Secure Logout</button>
-    </div>
+        <h2>
