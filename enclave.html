@@ -19,10 +19,11 @@
             color: var(--text); 
             font-family: 'Inter', sans-serif; 
             margin: 0; 
-            padding: 40px 20px 100px 20px; /* Extra padding at bottom for formal footer */
+            padding: 40px 20px 120px 20px; /* Padding for the fixed footer */
+            min-height: 100vh;
         }
 
-        /* --- Updated Header with Logo --- */
+        /* --- Header with Logo --- */
         .header { 
             max-width: 1100px; 
             margin: 0 auto 60px; 
@@ -33,18 +34,18 @@
             align-items: center; 
         }
         .header-logo { 
-            width: 140px; /* Prominent header branding */
+            width: 140px; 
             filter: brightness(0) invert(1); 
         }
         .header h2 { 
-            font-size: 1.2rem; 
+            font-size: 1.1rem; 
             letter-spacing: 0.3rem; 
             text-transform: uppercase; 
             margin: 0; 
             font-weight: 300;
         }
 
-        /* --- Enclave Content Grid --- */
+        /* --- Technical Grid --- */
         .grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
@@ -56,14 +57,109 @@
             background: var(--panel); 
             border: 1px solid var(--border); 
             padding: 35px; 
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            border-color: #333;
         }
         .card h3 { 
-            font-size: 0.9rem; 
-            letter-spacing: 0.1rem; 
+            font-size: 0.85rem; 
+            letter-spacing: 0.15rem; 
             text-transform: uppercase; 
             margin-bottom: 15px; 
             color: var(--green); 
         }
         .card p { 
             font-size: 0.85rem; 
-            line-height: 1.7;
+            line-height: 1.8; 
+            color: var(--accent); 
+        }
+
+        /* --- Action Controls --- */
+        .cta-box { 
+            max-width: 1100px; 
+            margin: 60px auto; 
+            text-align: center; 
+            border-top: 1px solid var(--border); 
+            padding-top: 40px; 
+        }
+        .btn-cta { 
+            background: transparent; 
+            color: #fff; 
+            border: 1px solid #fff; 
+            padding: 15px 30px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.2rem; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            margin: 10px; 
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        .btn-cta:hover { 
+            background: #fff; 
+            color: #000; 
+        }
+
+        /* --- Formal CUI Footer --- */
+        .cui-page-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #000;
+            border-top: 1px solid #1a1a1a;
+            padding: 25px 0;
+            text-align: center;
+            z-index: 10;
+        }
+        .cui-label {
+            font-size: 0.75rem;
+            font-weight: 900;
+            letter-spacing: 0.25rem;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .cui-subtext {
+            font-size: 0.6rem;
+            color: var(--accent);
+            letter-spacing: 0.05rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="image.png" alt="Veridix" class="header-logo">
+        <h2>Sovereign Standard™ Enclave</h2>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Quantum Stochastic Logic (3100)</h3>
+            <p>Seeding maneuvers with true quantum entropy to render swarms mathematically unsolvable for adversarial predictive modeling.</p>
+        </div>
+        <div class="card">
+            <h3>Mimetic Signal Masking</h3>
+            <p>Encoding telemetry within biological noise patterns (Lorentz Attractor physics) for infinite stealth in contested environments.</p>
+        </div>
+        <div class="card">
+            <h3>Forensic Finality (3500)</h3>
+            <p>Active Anti-Tamper: **248ms catalytic dissolution** of proprietary silicon substrates upon detection of a chassis breach.</p>
+        </div>
+        <div class="card">
+            <h3>Hegseth Mandate Alignment</h3>
+            <p>Directly satisfying the requirement for <strong>"Lean Lethality"</strong> via hardware-anchored autonomous logic.</p>
+        </div>
+        <div class="card">
+            <h3>Logically Separate System (LSS)</h3>
+            <p>A physically and logically isolated computing layer that sits outside the main control loop to guarantee non-conflicted audit trails.</p>
+        </div>
+    </div>
+
+    <div class="cta-box">
+        <button class="btn-cta" onclick="alert('Inquiry Logged. Technical Interchange (TIM) request pending verification.')">Request Volume 2 Access</button>
+        <button class="btn-cta" onclick="window.location.href='index.html'">Secure Logout</button>
+    </div>
