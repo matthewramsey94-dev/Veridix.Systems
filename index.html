@@ -12,6 +12,7 @@
             --text-accent: #888888;
             --border-color: #1a1a1a;
             --highlight: #ffffff;
+            --danger: #ff0000;
         }
 
         body {
@@ -28,46 +29,49 @@
 
         .container {
             text-align: center;
-            max-width: 650px;
+            max-width: 750px;
             padding: 40px;
         }
 
         .logo {
-            width: 160px;
-            margin-bottom: 40px;
-            /* Keeps the logo crisp against the black background */
+            width: 140px;
+            margin-bottom: 30px;
             filter: brightness(0) invert(1);
         }
 
         h1 {
-            font-size: 1.1rem;
-            letter-spacing: 0.4rem;
+            font-size: 1.5rem;
+            letter-spacing: 0.5rem;
             text-transform: uppercase;
             font-weight: 300;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
+        /* 1. Clear Value Proposition Tagline */
         .tagline {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             color: var(--text-accent);
             letter-spacing: 0.15rem;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
+            font-weight: 400;
         }
 
+        /* 2. Access Layer Gatekeeping */
         .gateway-box {
             border: 1px solid var(--border-color);
             background-color: var(--secondary-bg);
-            padding: 40px;
-            border-radius: 2px;
+            padding: 50px;
+            border-radius: 0;
             text-align: left;
+            position: relative;
         }
 
         .gateway-header {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.2rem;
+            letter-spacing: 0.25rem;
             color: var(--highlight);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
         }
@@ -78,80 +82,11 @@
             width: 8px;
             height: 8px;
             background-color: #00ff00;
-            margin-right: 12px;
+            margin-right: 15px;
             border-radius: 50%;
         }
 
         p {
-            font-size: 0.85rem;
-            line-height: 1.7;
-            margin-bottom: 30px;
-            color: var(--text-accent);
-        }
-
-        .verification-notice {
-            font-size: 0.7rem;
-            color: #d1d1d1;
-            background: #151515;
-            padding: 15px;
-            border-left: 2px solid var(--highlight);
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            display: block;
-            text-align: center;
-            background-color: var(--highlight);
-            color: var(--primary-bg);
-            padding: 15px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2rem;
-            font-weight: 600;
-            transition: opacity 0.3s ease;
-        }
-
-        .cta-button:hover {
-            opacity: 0.9;
-        }
-
-        .footer {
-            margin-top: 60px;
-            font-size: 0.65rem;
-            color: #444;
-            letter-spacing: 0.1rem;
-            text-transform: uppercase;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <img src="image.png" alt="Veridix Logo" class="logo">
-        
-        <h1>Veridix</h1>
-        <div class="tagline">Sovereign Standard™ Infrastructure</div>
-
-        <div class="gateway-box">
-            <div class="gateway-header">Secure Inquiry Gateway</div>
-            <p>
-                Veridix delivers hardware-anchored Operational Assurance (OAL) for large-scale autonomous systems. Access to technical specifications, 3100-series schematics, and manufacturing roadmaps is restricted to vetted partners.
-            </p>
-            
-            <div class="verification-notice">
-                <strong>ATTENTION:</strong> All inquiries are subject to mandatory identity verification. Access priority is granted exclusively to <strong>.mil</strong> and <strong>.gov</strong> domains.
-            </div>
-
-            <a href="mailto:m.ramsey@veridix.systems?subject=Identity Verification Request - [Department/Agency]" class="cta-button">
-                Initialize Verification
-            </a>
-        </div>
-
-        <div class="footer">
-            CUI // Distribution Statement D: DoD and U.S. DoD Contractors Only
-        </div>
-    </div>
-
-</body>
-</html>
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 25px
