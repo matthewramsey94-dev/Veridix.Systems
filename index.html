@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veridix | Sovereign Standard™</title>
+    <!-- 2026 Typography: High-performance Inter via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="fonts.googleapis.com" rel="stylesheet">
+    
     <style>
         :root {
             --primary-bg: #000000;
             --secondary-bg: #0a0a0a;
             --text-main: #ffffff;
-            --text-accent: #888888;
+            /* Contrast Adjusted: #949494 meets WCAG AA 4.5:1 ratio on black */
+            --text-accent: #949494; 
             --border-color: #1a1a1a;
             --highlight: #ffffff;
+            --status-green: #00ff00;
             --danger: #ff0000;
         }
 
@@ -31,12 +38,17 @@
             text-align: center;
             max-width: 750px;
             padding: 40px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        .logo {
-            width: 140px;
+        /* Responsive Branding */
+        .logo-placeholder {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.05rem;
             margin-bottom: 30px;
-            filter: brightness(0) invert(1);
+            color: var(--highlight);
         }
 
         h1 {
@@ -47,7 +59,6 @@
             margin-bottom: 12px;
         }
 
-        /* 1. Clear Value Proposition Tagline */
         .tagline {
             font-size: 0.95rem;
             color: var(--text-accent);
@@ -56,7 +67,7 @@
             font-weight: 400;
         }
 
-        /* 2. Access Layer Gatekeeping */
+        /* Access Layer Gatekeeping */
         .gateway-box {
             border: 1px solid var(--border-color);
             background-color: var(--secondary-bg);
@@ -76,17 +87,102 @@
             align-items: center;
         }
 
-        .gateway-header::before {
-            content: "";
+        /* Accessible Status Indicator */
+        .status-dot {
             display: inline-block;
             width: 8px;
             height: 8px;
-            background-color: #00ff00;
+            background-color: var(--status-green);
             margin-right: 15px;
             border-radius: 50%;
+            box-shadow: 0 0 8px var(--status-green);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
         }
 
         p {
             font-size: 0.9rem;
             line-height: 1.8;
-            margin-bottom: 25px
+            margin-bottom: 25px;
+            color: var(--text-accent);
+        }
+
+        /* Minimal Sovereign Input */
+        .access-input {
+            width: 100%;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 15px;
+            font-family: inherit;
+            letter-spacing: 0.1rem;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .access-input:focus {
+            border-color: var(--text-accent);
+        }
+
+        .btn-access {
+            background: var(--highlight);
+            color: var(--primary-bg);
+            border: none;
+            padding: 15px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-access:hover {
+            opacity: 0.9;
+        }
+
+        /* 2026 Mobile Optimization */
+        @media (max-width: 600px) {
+            .gateway-box { padding: 30px; }
+            h1 { font-size: 1.2rem; letter-spacing: 0.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-placeholder">VERIDIX</div>
+        
+        <h1>Sovereign Standard™</h1>
+        <div class="tagline">Decentralized protocols for the post-state era.</div>
+
+        <div class="gateway-box">
+            <div class="gateway-header">
+                <span class="status-dot"></span>
+                <span class="sr-only">Status: </span>Network Active
+            </div>
+            
+            <p>Authentication required. Secure your digital assets through our audited sovereign gateway. Enter your identifier to initiate verification.</p>
+            
+            <form action="#" method="POST">
+                <label for="identifier" class="sr-only">Sovereign Identifier</label>
+                <input type="text" id="identifier" name="identifier" class="access-input" placeholder="SOVEREIGN IDENTIFIER" required>
+                <button type="submit" class="btn-access">Initiate Access</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
