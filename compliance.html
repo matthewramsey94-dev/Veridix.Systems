@@ -8,109 +8,50 @@
     <style>
         :root { --bg: #000; --panel: #0a0a0a; --text: #fff; --accent: #949494; --border: #1a1a1a; --green: #00ff00; }
         body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 0; min-height: 100vh; }
-        
-        /* --- Validated Personnel Status Bar --- */
         .status-bar { background: #111; border-bottom: 1px solid var(--border); padding: 10px 40px; display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; z-index: 2000; }
         .status-text { font-family: monospace; font-size: 0.65rem; color: var(--green); letter-spacing: 0.1rem; text-transform: uppercase; }
-        .status-text span { color: #fff; margin-left: 10px; }
-
         .corner-logo { position: fixed; top: 60px; left: 40px; width: 140px; filter: brightness(0) invert(1); z-index: 1000; }
-        
         .content-wrapper { padding: 140px 40px 180px 40px; max-width: 1200px; margin: 0 auto; }
-        
         .header-title { text-align: right; margin-bottom: 50px; }
         .header-title h2 { font-size: 1.1rem; letter-spacing: 0.3rem; text-transform: uppercase; font-weight: 300; border-bottom: 1px solid var(--border); display: inline-block; padding-bottom: 10px; }
-
-        /* --- Compliance Table Styling --- */
         .matrix-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.85rem; background: var(--panel); border: 1px solid var(--border); }
-        .matrix-table th { background: #111; text-align: left; padding: 20px; text-transform: uppercase; letter-spacing: 0.1rem; border-bottom: 1px solid var(--border); color: var(--green); font-size: 0.75rem; }
+        .matrix-table th { background: #111; text-align: left; padding: 20px; text-transform: uppercase; color: var(--green); font-size: 0.75rem; border-bottom: 1px solid var(--border); }
         .matrix-table td { padding: 20px; border-bottom: 1px solid var(--border); line-height: 1.6; color: var(--accent); }
-        .matrix-table tr:hover { background: #0d0d0d; }
-        .matrix-table strong { color: #fff; }
         .directive-tag { font-family: monospace; color: #fff; background: #222; padding: 2px 6px; font-size: 0.7rem; border-radius: 2px; }
-
         .cta-box { margin-top: 60px; text-align: center; }
-        .btn-cta { background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2rem; cursor: pointer; font-size: 0.75rem; font-weight: 700; }
-
+        .btn-cta { background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2rem; cursor: pointer; font-size: 0.75rem; font-weight: 700; margin: 10px; }
         .cui-page-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #000; border-top: 1px solid #1a1a1a; padding: 20px 0; text-align: center; z-index: 1000; }
-        .cui-label { font-size: 0.75rem; font-weight: 900; letter-spacing: 0.2rem; text-transform: uppercase; margin-bottom: 5px; }
+        .cui-label { font-size: 0.75rem; font-weight: 900; letter-spacing: 0.2rem; text-transform: uppercase; }
     </style>
 </head>
 <body>
-
     <div class="status-bar">
-        <div class="status-text">
-            SYSTEM STATUS: OPERATIONAL // AUTHENTICATED PERSONNEL: <span>ID_3100_SECURE</span>
-        </div>
+        <div class="status-text">SYSTEM STATUS: OPERATIONAL // AUTHENTICATED PERSONNEL: <span>ID_3100_SECURE</span></div>
     </div>
-
     <img src="image.png" alt="Veridix" class="corner-logo">
-
     <div class="content-wrapper">
         <div class="header-title">
             <h2>Technical Compliance Matrix</h2>
-            <p style="color: var(--accent); font-size: 0.7rem; letter-spacing: 0.1rem; margin-top: 10px; text-transform: uppercase;">Direct Alignment: DoDD 3000.09 // Hegseth Mandate // Project 33</p>
+            <p style="color: var(--accent); font-size: 0.7rem; margin-top: 10px; text-transform: uppercase;">Direct Alignment: DoDD 3000.09 // NIST SP 800-193</p>
         </div>
-
         <table class="matrix-table">
             <thead>
-                <tr>
-                    <th>Capability Feat</th>
-                    <th>Strategic Objective</th>
-                    <th>Compliance Directive</th>
-                    <th>Patent Series</th>
-                </tr>
+                <tr><th>Feat</th><th>Objective</th><th>Compliance Directive</th></tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><strong>HMSR</strong> (Human-Machine State Record)</td>
-                    <td>Immutable audit trail for kinetic intent and chain of custody.</td>
-                    <td><span class="directive-tag">DoDD 3000.09</span></td>
-                    <td>3100-Series</td>
-                </tr>
-                <tr>
-                    <td><strong>LLS</strong> (Logically Separate System)</td>
-                    <td>Hardware-level isolation of safety protocols from mission software.</td>
-                    <td><span class="directive-tag">NIST SP 800-193</span></td>
-                    <td>3100/3200-Series</td>
-                </tr>
-                <tr>
-                    <td><strong>CSI</strong> (Cyber-Sovereign Interface)</td>
-                    <td>Hardened gate preventing payload software from affecting OAL governance.</td>
-                    <td><span class="directive-tag">DoDI 8500.01</span></td>
-                    <td>3300-Series</td>
-                </tr>
-                <tr>
-                    <td><strong>HELB</strong> (Hardened Edge Logic Barrier)</td>
-                    <td>Prevents lateral movement/logic injection during asset compromise.</td>
-                    <td><span class="directive-tag">FIPS 140-3</span></td>
-                    <td>3400-Series</td>
-                </tr>
-                <tr>
-                    <td><strong>FAD-3500</strong> (Forensic Atomization Device)</td>
-                    <td>Guaranteed 100% IP destruction within 248ms of unauthorized breach.</td>
-                    <td><span class="directive-tag">DoDI 5200.39</span></td>
-                    <td>3500-Series</td>
-                </tr>
-                <tr>
-                    <td><strong>QEC-3100</strong> (Quantum Entropy Core)</td>
-                    <td>Zero-predictability mission profiles to defeat adversarial AI modeling.</td>
-                    <td><span class="directive-tag">NDAA Sec. 848</span></td>
-                    <td>3100-Series</td>
-                </tr>
+                <tr><td><strong>HMSR</strong></td><td>Immutable audit trail for kinetic intent/custody.</td><td><span class="directive-tag">DoDD 3000.09</span></td></tr>
+                <tr><td><strong>LLS</strong></td><td>Hardware isolation of safety protocols.</td><td><span class="directive-tag">NIST SP 800-193</span></td></tr>
+                <tr><td><strong>CSI</strong></td><td>Hardened gate for payload software isolation.</td><td><span class="directive-tag">DoDI 8500.01</span></td></tr>
+                <tr><td><strong>HELB</strong></td><td>Prevents lateral movement during compromise.</td><td><span class="directive-tag">FIPS 140-3</span></td></tr>
             </tbody>
         </table>
-
         <div class="cta-box">
             <button class="btn-cta" onclick="window.location.href='enclave.html'">Return to Enclave</button>
-            <button class="btn-cta" onclick="alert('Submission Package Download Initialized (Encrypted Zip).')">Download Full Audit Package</button>
+            <button class="btn-cta" onclick="alert('Audit Package Download Initialized.')">Download Audit Package</button>
         </div>
     </div>
-
     <div class="cui-page-footer">
         <div class="cui-label">CUI // JURISDICTIONAL TRUTH ANCHOR ACTIVE</div>
-        <div style="font-size: 0.6rem; color: var(--accent); text-transform: uppercase;">Veridix Strategic Defense Initiative | 22-Patent Portfolio Compliance Matrix</div>
     </div>
-
 </body>
 </html>
