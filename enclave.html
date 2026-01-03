@@ -26,9 +26,10 @@
         
         .card { background: var(--panel); border: 1px solid var(--border); padding: 35px; transition: 0.3s; }
         .card:hover { border-color: #444; background: #0d0d0d; }
-        .card h3 { font-size: 0.8rem; letter-spacing: 0.15rem; text-transform: uppercase; margin-bottom: 15px; color: var(--green); display: flex; justify-content: space-between; }
-        .card .patent-count { color: #444; font-size: 0.65rem; }
+        .card h3 { font-size: 0.85rem; letter-spacing: 0.15rem; text-transform: uppercase; margin-bottom: 15px; color: var(--green); display: flex; justify-content: space-between; align-items: center; }
+        .card .patent-tag { color: #444; font-size: 0.6rem; font-family: monospace; border: 1px solid #222; padding: 2px 6px; }
         .card p { font-size: 0.85rem; line-height: 1.7; color: var(--accent); }
+        .card strong { color: #fff; }
 
         .cta-box { max-width: 1200px; margin: 60px auto; text-align: center; border-top: 1px solid var(--border); padding-top: 40px; }
         .btn-cta { background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2rem; cursor: pointer; font-size: 0.75rem; font-weight: 700; }
@@ -51,43 +52,43 @@
     <div class="content-wrapper">
         <div class="header-title">
             <h2>Sovereign Standard™ Enclave</h2>
-            <p>Integrated Defense Architecture // 22 Registered Patents</p>
+            <p>22-Patent Portfolio // Operational Feats & Compliance Matrix</p>
         </div>
 
         <div class="grid">
             <div class="card">
-                <h3>Compute & Logic <span class="patent-count">[8 Patents]</span></h3>
-                <p>Foundational 3100-Series Quantum Stochastic Logic. Hardware-anchored entropy generation for un-hackable decision cycles in denied environments.</p>
+                <h3>CSI <span class="patent-tag">Cyber-Sovereign Interface</span></h3>
+                <p>The hardware-gated bridge between commercial mission software and sovereign safety logic. <strong>CSI</strong> prevents mission-layer corruption from affecting kinetic governance.</p>
             </div>
 
             <div class="card">
-                <h3>Mimetic Stealth <span class="patent-count">[4 Patents]</span></h3>
-                <p>Proprietary 3200-Series Signal Masking. Encoding mission telemetry into ambient biological and environmental noise via Lorentz Attractor phase-shifting.</p>
+                <h3>HMSR <span class="patent-tag">Human-Machine State Record</span></h3>
+                <p>The core of <strong>DoDD 3000.09</strong> compliance. Provides an immutable, hardware-verified audit trail of every kinetic intent and decision-chain.</p>
+            </div>
+
+            <div class="card) ">
+                <h3>LLS <span class="patent-tag">Logically Separate System</span></h3>
+                <p>A physically isolated silicon layer (The "Moat") that executes safety-critical protocols independently of the asset's primary flight/navigation computer.</p>
             </div>
 
             <div class="card">
-                <h3>Parasitic Persistence <span class="patent-count">[3 Patents]</span></h3>
-                <p>3400-Series OEH (Orbital/Environmental Harvesting). Patents covering scavenged-energy logic maintenance for ultra-long-duration mission persistence.</p>
+                <h3>HELB <span class="patent-tag">Hardened Edge Logic Barrier</span></h3>
+                <p>Hardware-level enforcement of the "Sovereign Perimeter." <strong>HELB</strong> prevents unauthorized lateral movement or logic injection during asset compromise.</p>
             </div>
 
             <div class="card">
-                <h3>Edge Intelligence <span class="patent-count">[2 Patents]</span></h3>
-                <p>Interior Data Progression (IDP) protocols. Recursive logic hardening that allows swarm intelligence to grow 2x more resilient upon asset loss.</p>
+                <h3>QEC-3100 <span class="patent-tag">Quantum Entropy Core</span></h3>
+                <p>Utilizes hardware-anchored quantum entropy to seed stochastic maneuvers, ensuring mission profiles are mathematically unsolvable by adversarial AI.</p>
             </div>
 
             <div class="card">
-                <h3>Kinetic Forensics <span class="patent-count">[3 Patents]</span></h3>
-                <p>3500-Series Catalytic Dissolution. Active anti-tamper hardware ensuring 100% volumetric atomization of proprietary logic within 248ms of breach.</p>
-            </div>
-
-            <div class="card">
-                <h3>Cross-Domain Flow <span class="patent-count">[2 Patents]</span></h3>
-                <p>Universal Alliance Protocols. Hardware-level abstraction layers (OAL) designed for seamless integration into Air, Land, Sea, and Space hulls.</p>
+                <h3>FAD-3500 <span class="patent-tag">Forensic Atomization Device</span></h3>
+                <p>Active <strong>248ms catalytic substrate dissolution</strong>. Guarantees 100% volumetric destruction of the 22-patent IP block upon chassis breach detection.</p>
             </div>
         </div>
 
         <div class="cta-box">
-            <button class="btn-cta" onclick="sendInquiry()">Request Full Patent Matrix Access</button>
+            <button class="btn-cta" onclick="sendInquiry()">Request Technical Compliance Data</button>
             <button class="btn-cta" onclick="window.location.href='index.html'">Secure Logout</button>
         </div>
     </div>
@@ -99,8 +100,8 @@
 
     <script>
         function sendInquiry() {
-            const subject = "Verification Request: Veridix 22-Patent Portfolio Matrix";
-            const body = "To Veridix Operations,\n\nI am requesting a high-level review of the 22-patent portfolio categorized under the Sovereign Standard OAL.\n\nMy organization has a requirement for hardware-anchored autonomous governance.\n\nValidated .mil/.gov identity attached.";
+            const subject = "Verification Request: HMSR/LLS/CSI Technical Matrix [N0016426SNB26]";
+            const body = "To Veridix Operations,\n\nI am requesting specific technical data regarding the CSI, HMSR, and LLS implementations within the Sovereign Standard OAL.\n\nRequired for mission-gap analysis regarding DoDD 3000.09 compliance.\n\nValidated .mil/.gov identity attached.";
             window.location.href = "mailto:m.ramsey@veridix.systems?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
         }
     </script>
