@@ -3,217 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veridix | Sovereign Standard™</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="fonts.googleapis.com" rel="stylesheet">
-    
+    <title>Veridix | Sovereign Standard™ Gateway</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* --- Global Variables & Base Styles --- */
-        :root {
-            --primary-bg: #000000;
-            --secondary-bg: #0a0a0a;
-            --text-main: #ffffff;
-            --text-accent: #949494; 
-            --border-color: #1a1a1a;
-            --highlight: #ffffff;
-            --status-green: #00ff00;
-        }
-
-        body {
-            background-color: var(--primary-bg);
-            background-image: url('www.transparenttextures.com');
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden; 
-        }
-
-        .container {
-            text-align: center;
-            max-width: 750px;
-            padding: 40px;
-            z-index: 2;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%);
-        }
-
-        .hidden { display: none !important; }
-
-        /* --- Gateway Styles (Login Screen) --- */
-        .logo-container { margin-bottom: 40px; position: relative; display: inline-block; }
-        .logo-img { width: 120px; height: auto; filter: brightness(0) invert(1); }
-        h1 { font-size: 1.4rem; letter-spacing: 0.6rem; text-transform: uppercase; font-weight: 300; margin-bottom: 15px; }
-        .tagline { font-size: 0.85rem; color: var(--text-accent); letter-spacing: 0.2rem; margin-bottom: 60px; }
-        .gateway-box { border: 1px solid var(--border-color); background-color: var(--secondary-bg); padding: 50px; text-align: left; backdrop-filter: blur(10px); }
-        .gateway-header { font-size: 0.75rem; letter-spacing: 0.2rem; margin-bottom: 25px; display: flex; align-items: center; }
-        .status-dot { width: 6px; height: 6px; background-color: var(--status-green); margin-right: 12px; border-radius: 50%; box-shadow: 0 0 10px var(--status-green); }
-        .access-input { width: 100%; background: transparent; border: 1px solid var(--border-color); color: var(--text-main); padding: 18px; margin-bottom: 20px; box-sizing: border-box; outline: none; font-size: 0.8rem; letter-spacing: 0.1rem; }
-        .btn-access { background: var(--highlight); color: var(--primary-bg); border: none; padding: 18px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25rem; cursor: pointer; width: 100%; }
-
-        /* CUI Statement Styling (New Footer) */
-        .cui-footer {
-            margin-top: 80px;
-            font-size: 0.7rem;
-            color: var(--text-accent);
-            opacity: 0.6;
-            line-height: 1.5;
-            padding: 0 20px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* --- Dashboard Styles (The "Pop" View / Technical Authority Enclave) --- */
-        .dashboard-container { padding: 40px 20px; max-width: 1200px; width: 100%; }
-        .dashboard-header { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; text-align: left; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
-        .section-title { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.15rem; margin-top: 50px; margin-bottom: 20px; color: var(--highlight); }
-        .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .grid-item { background: var(--secondary-bg); padding: 30px; border: 1px solid var(--border-color); border-radius: 4px; text-align: left; min-height: 150px; display: flex; flex-direction: column; }
-        .grid-item h3 { font-size: 0.9rem; margin: 0 0 10px 0; color: var(--text-main); }
-        .grid-item p { font-size: 0.8rem; line-height: 1.6; color: var(--text-accent); margin: 0; }
-        .cta-section { margin-top: 60px; text-align: center; }
-        .cta-button { background: transparent; color: var(--status-green); border: 1px solid var(--status-green); padding: 15px 30px; margin: 5px; text-transform: uppercase; letter-spacing: 0.1rem; cursor: pointer; }
-        .btn-logout { margin-top: 40px; background: transparent; color: var(--text-accent); border: 1px solid var(--border-color); padding: 10px 20px; cursor: pointer; }
+        :root { --bg: #000; --panel: #0a0a0a; --text: #fff; --accent: #949494; --border: #1a1a1a; --green: #00ff00; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .container { text-align: center; max-width: 600px; padding: 20px; }
+        .logo-img { width: 180px; margin-bottom: 30px; filter: brightness(0) invert(1); }
+        h1 { font-size: 1.4rem; letter-spacing: 0.5rem; text-transform: uppercase; font-weight: 300; margin-bottom: 10px; }
+        .tagline { font-size: 0.8rem; color: var(--accent); letter-spacing: 0.2rem; margin-bottom: 50px; text-transform: uppercase; font-weight: 900; }
+        .box { border: 1px solid var(--border); background: var(--panel); padding: 40px; text-align: left; }
+        .status { font-size: 0.7rem; display: flex; align-items: center; margin-bottom: 25px; letter-spacing: 0.1rem; }
+        .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; margin-right: 10px; box-shadow: 0 0 8px var(--green); }
+        .input { width: 100%; background: #111; border: 1px solid var(--border); color: #fff; padding: 15px; margin-bottom: 20px; box-sizing: border-box; font-family: monospace; outline: none; }
+        .btn { width: 100%; padding: 15px; border: none; font-weight: 900; letter-spacing: 0.2rem; text-transform: uppercase; cursor: pointer; transition: 0.3s; margin-bottom: 15px; }
+        .btn-main { background: #fff; color: #000; }
+        .btn-cac { background: transparent; color: var(--green); border: 1px solid var(--green); }
+        .footer { margin-top: 50px; font-size: 0.65rem; color: #444; line-height: 1.6; text-align: center; }
     </style>
 </head>
 <body>
-
-    <!-- Gateway View Content -->
-    <div id="gateway-view">
-        <div class="container">
-            <div class="logo-container">
-                <img src="image.png" alt="Veridix Hexagon Logo" class="logo-img">
-            </div>
-            <h1>Sovereign Standard™</h1>
-            <div class="tagline">AUDITED PROTOCOLS FOR GLOBAL SOVEREIGNTY</div>
-
-            <div class="gateway-box">
-                <div class="gateway-header">
-                    <span class="status-dot"></span> NETWORK STATUS: ENCRYPTED
-                </div>
-                
-                <form id="login-form"> 
-                    <input type="password" id="identifier-input" class="access-input" placeholder="SOVEREIGN IDENTIFIER" required>
-                    <button type="submit" class="btn-access">Validate Access</button>
-                </form>
-            </div>
-            
-            <!-- NEW CUI Statement Footer -->
-            <div class="cui-footer">
-                **CUI Notice:** All data and information accessed via the Sovereign Standard portal is considered Controlled Unclassified Information (CUI) and must be handled in accordance with DoD Instruction 5200.48. Unauthorized access or distribution is strictly prohibited.
-            </div>
+    <div class="container">
+        <img src="image.png" alt="Veridix" class="logo-img">
+        <h1>Veridix</h1>
+        <div class="tagline">The Hardware-Anchored Sovereign Standard</div>
+        <div class="box">
+            <div class="status"><span class="dot"></span> SECURE GATEWAY ACTIVE</div>
+            <button class="btn btn-cac" onclick="alert('Initializing CAC/PKI Handshake...')">Verify with CAC (PKI)</button>
+            <div style="text-align:center; color:#222; margin-bottom:15px; font-size:0.6rem;">— OR —</div>
+            <input type="password" id="idInput" class="input" placeholder="SOVEREIGN IDENTIFIER">
+            <button class="btn btn-main" onclick="checkAccess()">Validate Credentials</button>
+        </div>
+        <div class="footer">
+            <strong>CUI // ITAR RESTRICTED DATA</strong><br>
+            Handling per DoDI 5200.48 required. Distribution Statement D.
         </div>
     </div>
-
-    <!-- Dashboard View Content (Hidden initially) -->
-    <div id="dashboard-view" class="hidden">
-        <div class="dashboard-container">
-            <div class="dashboard-header">Sovereign Standard™: Technical Authority Enclave</div>
-            
-            <!-- Content from previous response inserted here (Strategic Pillars, Technical Domains, etc.) -->
-            <!-- I. The Strategic Pillar: "The Inevitable Standard" -->
-            <div class="section-title">I. The Strategic Pillar: "The Inevitable Standard"</div>
-            <div class="bento-grid">
-                <div class="grid-item">
-                    <h3>The Hegseth Compliance Framework</h3>
-                    <p>A high-level brief on how hardware-anchored logic satisfies the mandate for **"Lean Lethality"** within autonomous systems.</p>
-                </div>
-                <div class="grid-item">
-                    <h3>Project 33 Integration Logic</h3>
-                    <p>Enabling the Navy's 200,000-unit objective by solving the fundamental **"Trust Gap"** in edge autonomy.</p>
-                </div>
-                <div class="grid-item">
-                    <h3>The cATO Breakthrough</h3>
-                    <p>The Continuous Authority to Operate model; decoupling safety logic from mission software via physical **air-gap mechanics**.</p>
-                </div>
-            </div>
-
-            <!-- II. The Technical Domains: "The Physics of Dominance" -->
-            <div class="section-title">II. The Technical Domains: "The Physics of Dominance"</div>
-            <div class="bento-grid">
-                <div class="grid-item">
-                    <h3>Quantum-Seeded Stochastic Logic (3100-Series)</h3>
-                    <p>A solution to Adversarial Predictive Modeling, rendering swarms mathematically unsolvable.</p>
-                </div>
-                <div class="grid-item">
-                    <h3>Ambient Mimetic Signal Masking (Mime-Link)</h3>
-                    <p>Phase-encoding telemetry into biological noise, hinting at Infinite Stealth capabilities (Lorentz Attractor physics).</p>
-                </div>
-                <div class="grid-item">
-                    <h3>Recursive Logic Hardening (IDP)</h3>
-                    <p>Sovereign Data Possession protocols where a fleet grows 2x more resilient in real-time through localized edge-processing.</p>
-                </div>
-            </div>
-
-            <!-- III. The Forensic Enclave: "Denial as a Service" -->
-             <div class="section-title">III. The Forensic Enclave: "Denial as a Service"</div>
-            <div class="bento-grid">
-                <div class="grid-item">
-                    <h3>The Board-Room Shield</h3>
-                    <p>The Human-Machine State Record (HMSR), providing an immutable, hardware-verified audit trail of every kinetic decision.</p>
-                </div>
-                <div class="grid-item">
-                    <h3>Forensic Finality (3500-Series)</h3>
-                    <p>Active Anti-Tamper protocols guaranteeing 100% atomization of proprietary logic upon asset capture (Note: 248ms catalytic dissolution).</p>
-                </div>
-            </div>
-
-            <!-- IV. The Scalability Enclave: "Tier-1 Industrial Capacity" -->
-            <div class="section-title">IV. The Scalability Enclave: "Tier-1 Industrial Capacity"</div>
-            <div class="bento-grid">
-                <div class="grid-item">
-                    <h3>The "Catapult" Manufacturing Model</h3>
-                    <p>Pre-optimized architecture that acts as a Horizontal Technology Enabler for Tier-1 Prime airframes and U.S.-based Trusted Foundries.</p>
-                </div>
-                 <div class="grid-item">
-                    <h3>Multi-Domain Jurisdictional Authority</h3>
-                    <p>Hints at current Sprint to Flight milestones and transition paths into Space Force (SDA) and Undersea (PEO UWS) programs.</p>
-                </div>
-            </div>
-
-            <!-- Tiered Access Call-to-Action -->
-            <div class="cta-section">
-                <button class="cta-button">Level 1: Operational Briefing Request</button>
-                <button class="cta-button">Level 2: Technical Interchange (TIM) Application</button>
-                <button class="cta-button">Level 3: Strategic Partnership Inquiry</button>
-            </div>
-            
-            <button id="logout-button" class="btn-logout">Revoke Access / Close Session</button>
-        </div>
-    </div>
-
-
-    <!-- JavaScript Logic (Embedded) -->
     <script>
-        // The required identifier is 'swordfish'
-        const correctIdentifier = 'swordfish'; 
-
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const identifier = document.getElementById('identifier-input').value;
-
-            if (identifier.toLowerCase() === correctIdentifier.toLowerCase()) {
-                document.getElementById('gateway-view').classList.add('hidden');
-                document.body.style.overflowY = 'auto'; 
-                document.getElementById('dashboard-view').classList.remove('hidden');
-                document.getElementById('identifier-input').value = ''; 
+        function checkAccess() {
+            const code = document.getElementById('idInput').value.trim();
+            const key = "3100-QEC"; // The "Secret Handshake" from Vol 2
+            const ceo = "VERIDIX-CEO-2026"; // Your personal bypass
+            if (code === key || code === ceo) {
+                window.location.href = "enclave.html";
             } else {
-                alert('Authentication failed. Invalid Sovereign Identifier.');
+                alert("ACCESS DENIED: Refer to Vol 1, Sec 3.1.");
             }
-        });
-
-        document.getElementById('logout-button').addEventListener('click', function() {
-            document.getElementById('gateway-view').classList.remove('hidden');
-            document.body.style.overflowY = 'hidden'; 
-            document.getElementById('dashboard-view').classList.add('hidden');
-        });
+        }
     </script>
-
 </body>
 </html>
