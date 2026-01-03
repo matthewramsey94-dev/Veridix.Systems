@@ -15,21 +15,27 @@
         .status-text span { color: #fff; margin-left: 10px; }
 
         .corner-logo { position: fixed; top: 60px; left: 40px; width: 140px; filter: brightness(0) invert(1); z-index: 1000; }
-        .content-wrapper { padding: 140px 40px 140px 40px; }
-        .header-title { max-width: 1100px; margin: 0 auto 50px; text-align: right; }
-        .header-title h2 { font-size: 1.1rem; letter-spacing: 0.3rem; text-transform: uppercase; font-weight: 300; border-bottom: 1px solid var(--border); display: inline-block; padding-bottom: 10px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; }
-        .card { background: var(--panel); border: 1px solid var(--border); padding: 40px; }
-        .card h3 { font-size: 0.85rem; letter-spacing: 0.15rem; text-transform: uppercase; margin-bottom: 15px; color: var(--green); }
-        .card p { font-size: 0.85rem; line-height: 1.8; color: var(--accent); }
+        .content-wrapper { padding: 140px 40px 180px 40px; }
+        
+        .header-title { max-width: 1200px; margin: 0 auto 50px; text-align: right; }
+        .header-title h2 { font-size: 1.1rem; letter-spacing: 0.3rem; text-transform: uppercase; font-weight: 300; border-bottom: 1px solid var(--border); display: inline-block; padding-bottom: 10px; }
+        .header-title p { color: var(--accent); font-size: 0.7rem; letter-spacing: 0.1rem; margin-top: 10px; text-transform: uppercase; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        
+        .card { background: var(--panel); border: 1px solid var(--border); padding: 35px; transition: 0.3s; }
+        .card:hover { border-color: #444; background: #0d0d0d; }
+        .card h3 { font-size: 0.8rem; letter-spacing: 0.15rem; text-transform: uppercase; margin-bottom: 15px; color: var(--green); display: flex; justify-content: space-between; }
+        .card .patent-count { color: #444; font-size: 0.65rem; }
+        .card p { font-size: 0.85rem; line-height: 1.7; color: var(--accent); }
 
-        .cta-box { max-width: 1100px; margin: 60px auto; text-align: center; border-top: 1px solid var(--border); padding-top: 40px; }
+        .cta-box { max-width: 1200px; margin: 60px auto; text-align: center; border-top: 1px solid var(--border); padding-top: 40px; }
         .btn-cta { background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 30px; text-transform: uppercase; letter-spacing: 0.2rem; cursor: pointer; font-size: 0.75rem; font-weight: 700; }
 
         .cui-page-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #000; border-top: 1px solid #1a1a1a; padding: 20px 0; text-align: center; z-index: 1000; }
         .cui-label { font-size: 0.75rem; font-weight: 900; letter-spacing: 0.2rem; text-transform: uppercase; margin-bottom: 5px; }
-        .cui-subtext { font-size: 0.65rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05rem; }
+        .cui-subtext { font-size: 0.6rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05rem; }
     </style>
 </head>
 <body>
@@ -45,38 +51,58 @@
     <div class="content-wrapper">
         <div class="header-title">
             <h2>Sovereign Standard™ Enclave</h2>
+            <p>Integrated Defense Architecture // 22 Registered Patents</p>
         </div>
 
         <div class="grid">
             <div class="card">
-                <h3>Quantum Stochastic Logic (3100)</h3>
-                <p>Seeding autonomous maneuvers with true quantum entropy to render swarms mathematically unsolvable against adversarial predictive modeling.</p>
+                <h3>Compute & Logic <span class="patent-count">[8 Patents]</span></h3>
+                <p>Foundational 3100-Series Quantum Stochastic Logic. Hardware-anchored entropy generation for un-hackable decision cycles in denied environments.</p>
             </div>
-            
+
             <div class="card">
-                <h3>Mimetic Signal Masking</h3>
-                <p>Encoding telemetry within biological noise patterns (Lorentz Attractor physics) for infinite stealth in contested maritime domains.</p>
+                <h3>Mimetic Stealth <span class="patent-count">[4 Patents]</span></h3>
+                <p>Proprietary 3200-Series Signal Masking. Encoding mission telemetry into ambient biological and environmental noise via Lorentz Attractor phase-shifting.</p>
             </div>
+
             <div class="card">
-                <h3>Forensic Finality (3500)</h3>
-                <p>Active Anti-Tamper: 248ms catalytic dissolution of proprietary silicon substrates upon detection of chassis compromise.</p>
+                <h3>Parasitic Persistence <span class="patent-count">[3 Patents]</span></h3>
+                <p>3400-Series OEH (Orbital/Environmental Harvesting). Patents covering scavenged-energy logic maintenance for ultra-long-duration mission persistence.</p>
             </div>
+
             <div class="card">
-                <h3>Hegseth Mandate Alignment</h3>
-                <p>Directly satisfying the requirement for <strong>"Lean Lethality"</strong> via hardware-anchored autonomous logic and air-gapped safety protocols.</p>
+                <h3>Edge Intelligence <span class="patent-count">[2 Patents]</span></h3>
+                <p>Interior Data Progression (IDP) protocols. Recursive logic hardening that allows swarm intelligence to grow 2x more resilient upon asset loss.</p>
+            </div>
+
+            <div class="card">
+                <h3>Kinetic Forensics <span class="patent-count">[3 Patents]</span></h3>
+                <p>3500-Series Catalytic Dissolution. Active anti-tamper hardware ensuring 100% volumetric atomization of proprietary logic within 248ms of breach.</p>
+            </div>
+
+            <div class="card">
+                <h3>Cross-Domain Flow <span class="patent-count">[2 Patents]</span></h3>
+                <p>Universal Alliance Protocols. Hardware-level abstraction layers (OAL) designed for seamless integration into Air, Land, Sea, and Space hulls.</p>
             </div>
         </div>
 
         <div class="cta-box">
-            <button class="btn-cta" onclick="alert('Formal Inquiry Logged.')">Request Technical Data</button>
+            <button class="btn-cta" onclick="sendInquiry()">Request Full Patent Matrix Access</button>
             <button class="btn-cta" onclick="window.location.href='index.html'">Secure Logout</button>
         </div>
     </div>
 
     <div class="cui-page-footer">
         <div class="cui-label">CONTROLLED UNCLASSIFIED INFORMATION // JURISDICTIONAL TRUTH ANCHOR ACTIVE</div>
-        <div class="cui-subtext">Proprietary and Confidential: Veridix Strategic Defense Initiative | Sovereign Standard™</div>
+        <div class="cui-subtext">Proprietary and Confidential: Veridix Strategic Defense Initiative | 22-Patent Portfolio | Sovereign Standard™</div>
     </div>
 
+    <script>
+        function sendInquiry() {
+            const subject = "Verification Request: Veridix 22-Patent Portfolio Matrix";
+            const body = "To Veridix Operations,\n\nI am requesting a high-level review of the 22-patent portfolio categorized under the Sovereign Standard OAL.\n\nMy organization has a requirement for hardware-anchored autonomous governance.\n\nValidated .mil/.gov identity attached.";
+            window.location.href = "mailto:m.ramsey@veridix.systems?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        }
+    </script>
 </body>
 </html>
