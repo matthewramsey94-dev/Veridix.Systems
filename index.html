@@ -9,6 +9,7 @@
     <link href="fonts.googleapis.com" rel="stylesheet">
     
     <style>
+        /* --- Global Variables & Base Styles (Gateway) --- */
         :root {
             --primary-bg: #000000;
             --secondary-bg: #0a0a0a;
@@ -21,7 +22,6 @@
 
         body {
             background-color: var(--primary-bg);
-            /* 2026 Trend: Subtle film grain makes black screens feel 'active' */
             background-image: url('www.transparenttextures.com');
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
@@ -31,7 +31,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden; /* Prevents horizontal scroll on animations */
         }
 
         .container {
@@ -39,141 +39,167 @@
             max-width: 750px;
             padding: 40px;
             z-index: 2;
-            /* Central radial glow to prevent 'dead' black screen */
             background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%);
         }
 
-        /* 1. Referenced Veridix Hexagon Logo */
-        .logo-container {
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
+        /* Utility Class to Hide Elements (Used for the dashboard initially) */
+        .hidden {
+            display: none !important;
         }
 
-        .logo-img {
-            width: 120px;
-            height: auto;
-            /* Inverts black logo to white for dark mode */
-            filter: brightness(0) invert(1);
-            transition: transform 0.5s ease;
-        }
+        /* --- Gateway Styles (Login Screen) --- */
+        .logo-container { margin-bottom: 40px; position: relative; display: inline-block; }
+        .logo-img { width: 120px; height: auto; filter: brightness(0) invert(1); }
+        .logo-container::after { /* Pulse animation omitted for brevity but can be added back */ }
+        h1 { font-size: 1.4rem; letter-spacing: 0.6rem; text-transform: uppercase; font-weight: 300; margin-bottom: 15px; }
+        .tagline { font-size: 0.85rem; color: var(--text-accent); letter-spacing: 0.2rem; margin-bottom: 60px; }
+        .gateway-box { border: 1px solid var(--border-color); background-color: var(--secondary-bg); padding: 50px; text-align: left; backdrop-filter: blur(10px); }
+        .gateway-header { font-size: 0.75rem; letter-spacing: 0.2rem; margin-bottom: 25px; display: flex; align-items: center; }
+        .status-dot { width: 6px; height: 6px; background-color: var(--status-green); margin-right: 12px; border-radius: 50%; box-shadow: 0 0 10px var(--status-green); }
+        .access-input { width: 100%; background: transparent; border: 1px solid var(--border-color); color: var(--text-main); padding: 18px; margin-bottom: 20px; box-sizing: border-box; outline: none; font-size: 0.8rem; letter-spacing: 0.1rem; }
+        .btn-access { background: var(--highlight); color: var(--primary-bg); border: none; padding: 18px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25rem; cursor: pointer; width: 100%; }
 
-        /* Subtle 2026 'pulsing' glow for security brands */
-        .logo-container::after {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%;
-            width: 140px; height: 140px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            animation: pulse 4s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
-        }
-
-        h1 {
-            font-size: 1.4rem;
-            letter-spacing: 0.6rem;
-            text-transform: uppercase;
-            font-weight: 300;
-            margin-bottom: 15px;
-        }
-
-        .tagline {
-            font-size: 0.85rem;
-            color: var(--text-accent);
-            letter-spacing: 0.2rem;
-            margin-bottom: 60px;
-        }
-
-        .gateway-box {
-            border: 1px solid var(--border-color);
-            background-color: var(--secondary-bg);
-            padding: 50px;
-            text-align: left;
-            backdrop-filter: blur(10px); /* 2026 Frosted Touch trend */
-        }
-
-        .gateway-header {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2rem;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-        }
-
-        .status-dot {
-            width: 6px; height: 6px;
-            background-color: var(--status-green);
-            margin-right: 12px;
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--status-green);
-        }
-
-        .access-input {
+        /* --- Dashboard Styles (The "Pop" View) --- */
+        .dashboard-container {
+            padding: 40px 20px;
+            max-width: 1200px;
             width: 100%;
-            background: transparent;
+        }
+
+        .dashboard-header {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        /* 2026 Bento Grid Layout */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            background: var(--secondary-bg);
+            padding: 30px;
             border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 18px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
-            outline: none;
+            border-radius: 4px;
+            text-align: left;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .grid-item-title {
             font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-accent);
+            margin-bottom: 15px;
             letter-spacing: 0.1rem;
         }
 
-        .btn-access {
-            background: var(--highlight);
-            color: var(--primary-bg);
-            border: none;
-            padding: 18px;
+        .data-viz {
+            font-size: 1.5rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.25rem;
-            cursor: pointer;
-            width: 100%;
+            color: var(--highlight);
         }
-
-        /* 2026 Background Detail: Floating 'Data' atmosphere */
-        .bg-lines {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px);
-            pointer-events: none;
-            z-index: 1;
+        
+        .btn-logout {
+            margin-top: 40px;
+            background: transparent;
+            color: var(--text-accent);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-lines"></div>
-
-    <div class="container">
-        <div class="logo-container">
-            <!-- Reference to your Veridix hexagon logo -->
-            <img src="image.png" alt="Veridix Hexagon Logo" class="logo-img">
-        </div>
-        
-        <h1>Sovereign Standard™</h1>
-        <div class="tagline">AUDITED PROTOCOLS FOR GLOBAL SOVEREIGNTY</div>
-
-        <div class="gateway-box">
-            <div class="gateway-header">
-                <span class="status-dot"></span> NETWORK STATUS: ENCRYPTED
+    <!-- Gateway View Content -->
+    <div id="gateway-view">
+        <div class="container">
+            <div class="logo-container">
+                <img src="image.png" alt="Veridix Hexagon Logo" class="logo-img">
             </div>
-            
-            <form>
-                <input type="password" class="access-input" placeholder="SOVEREIGN IDENTIFIER" required>
-                <button type="submit" class="btn-access">Validate Access</button>
-            </form>
+            <h1>Sovereign Standard™</h1>
+            <div class="tagline">AUDITED PROTOCOLS FOR GLOBAL SOVEREIGNTY</div>
+
+            <div class="gateway-box">
+                <div class="gateway-header">
+                    <span class="status-dot"></span> NETWORK STATUS: ENCRYPTED
+                </div>
+                
+                <form id="login-form"> 
+                    <input type="password" id="identifier-input" class="access-input" placeholder="SOVEREIGN IDENTIFIER" required>
+                    <button type="submit" class="btn-access">Validate Access</button>
+                </form>
+            </div>
         </div>
     </div>
+
+    <!-- Dashboard View Content (Hidden initially) -->
+    <div id="dashboard-view" class="hidden">
+        <div class="dashboard-container">
+            <div class="dashboard-header">Veridix Command Center: Operative Access Granted</div>
+            
+            <div class="bento-grid">
+                <div class="grid-item">
+                    <div class="grid-item-title">Global Security Index</div>
+                    <div class="data-viz">98.7% Stable</div>
+                </div>
+                <div class="grid-item">
+                    <div class="grid-item-title">Active Data Streams</div>
+                    <div class="data-viz">4,200 Connected Nodes</div>
+                </div>
+                <div class="grid-item">
+                    <div class="grid-item-title">Threat Matrix Analysis</div>
+                    <div class="data-viz">Status: Minimal Activity</div>
+                </div>
+                <div class="grid-item" style="grid-column: 1 / span 3;">
+                    <div class="grid-item-title">Interactive Map Simulation</div>
+                    <div class="data-viz">Rendering High-Fidelity 3D Assets...</div>
+                </div>
+            </div>
+            
+            <button id="logout-button" class="btn-logout">Revoke Access / Logout</button>
+        </div>
+    </div>
+
+
+    <!-- JavaScript Logic (Embedded) -->
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const identifier = document.getElementById('identifier-input').value;
+            // The secret key
+            const correctIdentifier = 'VERIDIX-ALPHA-7'; 
+
+            if (identifier === correctIdentifier) {
+                // Hide the login screen
+                document.getElementById('gateway-view').classList.add('hidden');
+                // Show the dashboard screen (the "pop")
+                document.getElementById('dashboard-view').classList.remove('hidden');
+                // Optional: clear the input
+                document.getElementById('identifier-input').value = ''; 
+
+            } else {
+                alert('Authentication failed. Invalid Sovereign Identifier.');
+            }
+        });
+
+        document.getElementById('logout-button').addEventListener('click', function() {
+            // Show the login screen
+            document.getElementById('gateway-view').classList.remove('hidden');
+            // Hide the dashboard screen
+            document.getElementById('dashboard-view').classList.add('hidden');
+        });
+    </script>
 
 </body>
 </html>
